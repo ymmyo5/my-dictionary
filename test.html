@@ -4,11 +4,24 @@
     <meta charset="utf-8">
     <link href="style.css" rel="stylesheet" type="text/css" media="all">
     <title>テストサイト</title>
+    <script src="test.html"></script>
     </head>
     <body>
-        <header>ヘッダー</header>
-        <nav>ナビ</nav>
+        <header>
+            <h1>単語一覧</h1>
+        </header>
 
+        <!-- 検索窓 -->
+        <form action="#" id="form">
+            <input type="text" name="content">
+            <datalist id="list">
+                <option value="りんご"></option>
+            </datalist>
+        </form>
+
+        <!-- 検索結果を出力 -->
+        <p id="output"></p>
+        
         <h1>タイトル</h1>
 
         <footer>フッター</footer>
