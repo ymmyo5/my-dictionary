@@ -4,13 +4,34 @@
     <meta charset="utf-8">
     <link href="style.css" rel="stylesheet" type="text/css" media="all">
     <title>テストサイト</title>
+    <script src="test.html"></script>
     </head>
     <body>
-        <header>ヘッダー</header>
-        <nav>ナビ</nav>
+        <header>
+            <h2 id="wordlist">単語一覧</h1>
+            <h2 id="title">タイトル</h1>
+        </header>
 
-        <h1>タイトル</h1>
+        <main>sample</main>
 
-        <footer>フッター</footer>
+        <!-- 検索欄 -->
+        <form action="#" id="form">
+            <input type="search" name="searchbox" list="search" class="textbox">
+            <input type="image" name="searchmark" src="検索アイコン.png">
+            <datalist id="search">
+                <option value=""></option>
+                <option value="りんご"></option>
+                <option value="バナナ"></option>
+                <option value="みかん"></option>
+            </datalist>
+        </form>
+        
+        <ul>
+            <li>りんご</li>
+            <li>バナナ</li>
+            <li>みかん</li>
+            <li>いちご</li>
+            <li>もも</li>
+        </ul>
     </body>
 </html>
