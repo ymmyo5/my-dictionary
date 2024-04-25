@@ -7,31 +7,34 @@
     <script src="test.html"></script>
     </head>
     <body>
-        <header>
-            <h2 id="wordlist">単語一覧</h1>
-            <h2 id="title">タイトル</h1>
-        </header>
+        <div class="parent">
+            <div class="side">
+                <h2 id="wordlist">単語一覧</h2>
 
-        <main>sample</main>
+                <!-- 検索欄 -->
+                <form action="#" id="form">
+                    <input type="search" name="searchbox" list="search" class="textbox">
+                    <input type="image" name="searchmark" src="検索アイコン.png">
+                    <datalist id="search">
+                        <option value=""></option>
+                        <option value="りんご"></option>
+                        <option value="バナナ"></option>
+                        <option value="みかん"></option>
+                    </datalist>
+                </form>
+                
+                <ul>
+                    <li>りんご</li>
+                    <li>バナナ</li>
+                    <li>みかん</li>
+                    <li>いちご</li>
+                    <li>もも</li>
+                </ul>
+            </div>
 
-        <!-- 検索欄 -->
-        <form action="#" id="form">
-            <input type="search" name="searchbox" list="search" class="textbox">
-            <input type="image" name="searchmark" src="検索アイコン.png">
-            <datalist id="search">
-                <option value=""></option>
-                <option value="りんご"></option>
-                <option value="バナナ"></option>
-                <option value="みかん"></option>
-            </datalist>
-        </form>
-        
-        <ul>
-            <li>りんご</li>
-            <li>バナナ</li>
-            <li>みかん</li>
-            <li>いちご</li>
-            <li>もも</li>
-        </ul>
+            <div class="center">
+                <h2 id="title">自由記述</h2>
+            </div>
+        </div>
     </body>
 </html>
