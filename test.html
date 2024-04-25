@@ -8,12 +8,16 @@
     </head>
     <body>
         <header>
-            <h1>単語一覧</h1>
+            <h2 id="wordlist">単語一覧</h1>
+            <h2 id="title">タイトル</h1>
         </header>
 
-        <!-- 検索窓 -->
+        <main>sample</main>
+
+        <!-- 検索欄 -->
         <form action="#" id="form">
-            <input type="text" name="content" list="search" class="window">
+            <input type="search" name="searchbox" list="search" class="textbox">
+            <input type="image" name="searchmark" src="検索アイコン.png">
             <datalist id="search">
                 <option value=""></option>
                 <option value="りんご"></option>
@@ -21,12 +25,13 @@
                 <option value="みかん"></option>
             </datalist>
         </form>
-
-        <!-- 検索結果を出力 -->
-        <p id="output"></p>
         
-        <h1>タイトル</h1>
-
-        <footer>フッター</footer>
+        <ul>
+            <li>りんご</li>
+            <li>バナナ</li>
+            <li>みかん</li>
+            <li>いちご</li>
+            <li>もも</li>
+        </ul>
     </body>
 </html>

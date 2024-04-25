@@ -1,9 +1,67 @@
 body {
     font-family: "游ゴシック Medium", "Yu Gothic Medium";
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
-.window {
+#wordlist {
+    background-color: aquamarine;
+    margin-bottom: 1px;
+    position: relative; /* 基準位置 */
+    letter-spacing: 2px;
+    text-align: center;
+    float: left;
+    width: 150px;
+}
+
+h2 {
+    float: left;
+}
+
+#title {
+    background-color: blueviolet;
+    padding: 0px 15px 0px 15px;
+    width: 50%;
+}
+
+main {
+    border: solid 3px;
+    width: 200px;
+    float: left;
+}
+
+.textbox {
+    border-radius: 5px; /* 枠の角を丸く */
+}
+
+form, input {
+    background-color:chocolate;
+    clear: both; /* 回り込み禁止 */
     height: 1.5em;
-    width: 10em;
-    border-radius: 5px;   
+    position: absolute;
+    top: 35px
+}
+
+input[name="searchbox"] {
+    width: 130px;
+}
+
+input[name="searchmark"] {
+    width: auto;
+    left: 130px;
+}
+
+ul {
+    background-color: cornflowerblue;
+    list-style: none;
+    padding-left: 0;
+    padding-bottom: 10px;
+    clear: both;
+    position: absolute;
+    top: 80px
+}
+
+li {
+    padding-top: 10px;
+    width: 150px;
 }
