@@ -2,6 +2,8 @@ body {
     font-family: "游ゴシック Medium", "Yu Gothic Medium";
 }
 
-form {
-    
+.window {
+    height: 1.5em;
+    width: 10em;
+    border-radius: 5px;   
 }
