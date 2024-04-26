@@ -2,10 +2,9 @@
 <html lang="ja">
     <head>
     <meta charset="utf-8">
-    <link href="style.css" rel="stylesheet" type="text/css" media="all">
-    <script type="text/javascript" src="test.js"></script>
     <title>テストサイト</title>
-    <script src="test.html"></script>
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     </head>
     <body>
         <div class="parent">
@@ -24,21 +23,18 @@
                 </form>
                 
                 <ul>
-                    <li>りんご</li>
-                    <li>バナナ</li>
-                    <li>みかん</li>
-                    <li>いちご</li>
-                    <li>もも</li>
+                    <li id="output" onload="getFormData()"><li>
                 </ul>
             </div>
 
             <div class="center">
-                <form action="#" id="newword">
-                    <input type="text" name="word"> 
-                    <textarea id="textarea" class="box"></textarea>
-                    <input type="submit" value="確定" name="submit">
+                <form action="#" method="post" id="newword">
+                    <input type="text" name="word" id ="word" class="box" placeholder="登録したい単語の名前を入力"> 
+                    <textarea id="textarea" class="box" placeholder="単語の説明を入力"></textarea>
+                    <input type="submit" value="確定" name="submit" id="submit" onclick="saveFormData()">
                 </form>
             </div>
         </div>
+        <script type="text/javascript" src="test.js"></script>
     </body>
 </html>
