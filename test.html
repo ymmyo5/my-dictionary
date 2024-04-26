@@ -3,6 +3,7 @@
     <head>
     <meta charset="utf-8">
     <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    <script type="text/javascript" src="test.js"></script>
     <title>テストサイト</title>
     <script src="test.html"></script>
     </head>
@@ -12,9 +13,8 @@
                 <h2 id="wordlist">単語一覧</h2>
 
                 <!-- 検索欄 -->
-                <form action="#" id="form">
-                    <input type="search" name="searchbox" list="search" class="textbox">
-                    <input type="image" name="searchmark" src="検索アイコン.png">
+                <form action="#" id="searchform">
+                    <input type="search" name="searchbox" list="search" class="box" placeholder="検索する単語を入力">
                     <datalist id="search">
                         <option value=""></option>
                         <option value="りんご"></option>
@@ -33,7 +33,11 @@
             </div>
 
             <div class="center">
-                <h2 id="title">自由記述</h2>
+                <form action="#" id="newword">
+                    <input type="text" name="word"> 
+                    <textarea id="textarea" class="box"></textarea>
+                    <input type="submit" value="確定" name="submit">
+                </form>
             </div>
         </div>
     </body>

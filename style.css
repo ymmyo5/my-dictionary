@@ -1,9 +1,6 @@
 /* 全体の設定 */
 html, body {
     font-family: "游ゴシック Medium", "Yu Gothic Medium";
-    margin-left: 20px;
-    margin-right: 20px;
-    height: 100%;
 }
 
 /* 親の設定 */
@@ -12,37 +9,20 @@ html, body {
 }
 
 /* サイドの設定 */
-.side {
-    height: 100%;
-}
-
 #wordlist {
     background-color: aquamarine;
+    margin-top: auto;
     margin-bottom: 1px;
     letter-spacing: 2px;
     text-align: center;
-    width: 150px;
-    position: relative;
 }
 
-.textbox {
+.box {
     border-radius: 5px; /* 枠の角を丸く */
 }
 
-form, input {
+#searchform{
     background-color:chocolate;
-    height: 1.5em;
-    position: absolute;
-    top: 35px
-}
-
-input[name="searchbox"] {
-    width: 130px;
-}
-
-input[name="searchmark"] {
-    width: auto;
-    left: 130px;
 }
 
 ul {
@@ -50,21 +30,29 @@ ul {
     list-style: none;
     padding-left: 0;
     padding-bottom: 10px;
-    position: absolute;
-    top: 80px
+    margin: auto;
+
 }
 
 li {
     padding-top: 10px;
-    width: 150px;
 }
 
 /* センターの設定 */
-#title {
+.center {
     background-color: blueviolet;
+    flex-basis: 100%;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
-.center {
-    height: 100%;
-    width: 100%;
+textarea {
+    resize: none;
+    flex-grow: 1;
+}
+
+input[name=submit] {
+    float: right;
+    align-self: flex-end;
 }
