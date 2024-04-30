@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+    <meta charset="utf-8">
+    <title>単語の説明</title>
+    <link href="../css/common.css" rel="stylesheet" type="text/css" media="all">
+    <link href="../css/edit.css" rel="stylesheet" type="text/css" media="all">
+    </head>
+    <body>
+        <div class="parent">
+            <div class="side">
+                <h2 id="wordlist">単語一覧</h2>
+
+                <!-- 検索欄 -->
+                <form action="#" id="searchform">
+                    <input type="search" name="searchbox" list="search" class="box" placeholder="検索する単語を入力">
+                    <datalist id="search">
+                        <option value=""></option>
+                    </datalist>
+                </form>
+                
+                <ul id="output">
+                    <!-- 単語が表示される場所 -->
+                </ul>
+            </div>
+
+            <div class="center">
+                <textarea id="wordEdit" class="box"></textarea>
+                <textarea id="textEdit" class="box"></textarea>
+                <input type="submit" value="保存" name="save" id="save">
+                <input type="submit" value="戻る" name="back" id="back">
+            </div>
+        </div>
+        <script type="text/javascript" src="../js/edit.js"></script>
+    </body>
+</html>

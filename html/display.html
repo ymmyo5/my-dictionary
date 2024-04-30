@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+    <meta charset="utf-8">
+    <title>単語の説明</title>
+    <link href="../css/common.css" rel="stylesheet" type="text/css" media="all">
+    <link href="../css/display.css" rel="stylesheet" type="text/css" media="all">
+    </head>
+    <body>
+        <header>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="slide-menu">
+                <li>テスト１</li>
+                <li>テスト２</li>
+                <li>テスト３</li>
+            </ul>
+        </header>
+        <div class="parent">
+            <div class="side">
+                <h2 id="wordlist">単語一覧</h2>
+
+                <!-- 検索欄 -->
+                <form action="#" id="searchform">
+                    <input type="search" name="searchbox" list="search" class="box" placeholder="検索する単語を入力">
+                    <datalist id="search">
+                        <option value=""></option>
+                    </datalist>
+                </form>
+                
+                <ul id="output">
+                    <!-- 単語が表示される場所 -->
+                </ul>
+            </div>
+
+            <div class="center">
+                <hi id="wordDisplay"></hi>
+                <p id="textDisplay"></p>
+                <input type="submit" value="編集" name="edit" id="edit" onclick="edit()">
+            </div>
+        </div>
+        <script type="text/javascript" src="../js/display.js"></script>
+    </body>
+</html>

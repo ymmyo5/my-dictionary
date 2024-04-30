@@ -10,7 +10,7 @@ html, body {
 
 /* サイドの設定 */
 #wordlist {
-    background-color: aquamarine;
+    background-color: rgb(162, 255, 224);
     margin: auto;
     letter-spacing: 2px;
     text-align: center;
@@ -36,16 +36,19 @@ li {
     padding-top: 10px;
 }
 
+li:hover {
+    color: rgb(255, 106, 0);
+}
+
 /* センターの設定 */
 .center {
     background-color: blueviolet;
-    flex-basis: 100%;
     margin-left: 10px;
-    display: flex;
     flex-direction: column; /* 縦に並べる */
 }
 
-input[name=word] {
+#wordDisplay {
+    background-color: crimson;
     font-size: 30px;
     display: flex;
     padding: 10px;
@@ -53,13 +56,14 @@ input[name=word] {
     box-sizing: border-box; /* 親要素に横幅を合わせる */
 }
 
-textarea {
-    resize: none;
-    width: 100%;
-    height: 100%;
+#textDisplay {
+    background-color:bisque;
     box-sizing: border-box;
+    font-size: x-large;
+    margin: 10px;
 }
 
-input[name=submit] {
+input[name=back] {
     float: right;
+    margin-right: 10px;
 }

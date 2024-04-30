@@ -1,0 +1,19 @@
+/* センターの設定 */
+.center {
+    background-color: blueviolet;
+    flex-grow: 1;
+    margin-left: 10px;
+    flex-direction: column; /* 縦に並べる */
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: auto;
+    height: 100%;
+}
+
+input[name=edit] {
+    float: right;
+    margin-right: 10px;
+}
