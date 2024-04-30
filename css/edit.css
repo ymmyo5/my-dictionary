@@ -1,7 +1,34 @@
 /* センターの設定 */
 .center {
-    background-color: blueviolet;
+    background-color: rgb(226, 195, 255);
     flex-grow: 1;
+}
+
+#wordEdit {
+    background-color: rgb(255, 181, 168);
+    font-size: 30px;
+    display: flex;
+    width: 100%;
+    box-sizing: border-box; /* 親要素に横幅を合わせる */
+    resize: none;
+}
+
+#textEdit {
+    background-color:bisque;
+    resize: none;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: x-large;
+}
+
+#textDisplay {
+    background-color:bisque;
+    box-sizing: border-box;
+    font-size: x-large;
+    margin: 10px;
+}
+
+input[name=save] {
+    float: right;
     margin-left: 10px;
-    flex-direction: column; /* 縦に並べる */
 }

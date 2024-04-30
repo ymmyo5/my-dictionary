@@ -1,14 +1,11 @@
 "use strict";
 
-// 単語と説明を保存する
-function saveFormData() {
-    var wordIn = document.getElementById("word").value;
-    var textIn = document.getElementById("textarea").value;
-
-    localStorage.setItem(wordIn, textIn);
-    addList();
-}
-
+//ヘッダーの高さ分だけコンテンツを下げる
+$(function() {
+    var height=$(".header").height();
+    $("body").css("margin-top", height + 10);//10pxだけ余裕をもたせる
+});
+  
 // リストに単語を追加する
 function addList() {
     var ul = document.getElementById("output");
@@ -25,9 +22,4 @@ function addList() {
             window.location.href = "display.html?key=" + encodeURIComponent(word);
         });
     }
-}
-
-// ページ読み込み完了後に実行される
-window.onload = function() {
-    addList();     //　保存されているキーを表示する
 }
