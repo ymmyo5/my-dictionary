@@ -1,0 +1,10 @@
+/* センターの設定 */
+.center {
+    background-color: rgb(226, 195, 255);
+    flex-grow: 1;
+}
+
+input[name=edit] {
+    float: right;
+    margin-right: 10px;
+}

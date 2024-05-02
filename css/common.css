@@ -1,0 +1,109 @@
+/* 全体の設定 */
+html, body {
+    font-family: "游ゴシック Medium", "Yu Gothic Medium";
+    height: 100%;
+}
+
+/* ヘッダーのスタイル */
+.header {
+    height: 50px;
+    background-color: #2fc269;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.header_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: inherit;
+    color: #fff;
+    padding: 0 25px;
+}
+
+.header_logo a {
+    text-decoration: none;
+    font-size: 30px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.nav a {
+    text-decoration: none;
+}
+
+/* 親の設定 */
+.parent {
+    display: flex;
+    height: 100vh;
+}
+
+/* サイドの設定 */
+.side {
+    background-color: rgb(132, 132, 255);
+    height: 100vh;
+}
+
+#wordlist {
+    background-color: rgb(192, 255, 171);
+    margin: auto;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.box {
+    border-radius: 5px; /* 枠の角を丸く */
+}
+
+/* #searchform{
+    background-color:chocolate;
+} */
+
+ul {
+    background-color: rgb(174, 233, 255);
+    list-style: none;
+    padding-left: 0;
+    margin: auto;
+    height: 100vh;
+    overflow: auto;
+}
+
+li {
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+li:hover {
+    color: rgb(4, 88, 255);
+}
+
+/* センターの設定 */
+.center {
+    background-color: rgb(226, 195, 255);
+    margin-left: 10px;
+    flex-direction: column; /* 縦に並べる */
+}
+
+#wordDisplay {
+    background-color: rgb(255, 181, 168);
+    font-size: 30px;
+    display: flex;
+    padding: 5px 10px 5px 10px;
+    width: 100%;
+    box-sizing: border-box; /* 親要素に横幅を合わせる */
+}
+
+#textDisplay {
+    background-color:bisque;
+    font-size: x-large;
+    margin: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+input[name=back] {
+    float: left;
+    margin-right: 10px;
+}

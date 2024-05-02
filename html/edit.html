@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+    <meta charset="utf-8">
+    <title>My辞典 - 辞典の編集</title>
+    <link href="../css/common.css" rel="stylesheet" type="text/css" media="all">
+    <link href="../css/edit.css" rel="stylesheet" type="text/css" media="all">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <header class="header">
+            <div class="header_container">
+                <h1 class="header_logo"><a href="/">My辞典</a></h1>
+                <p class="nav"><a href="../html/main.html">新規追加</a></p>
+            </div>
+        </header>
+        <div class="parent">
+            <div class="side">
+                <h2 id="wordlist">単語一覧</h2>
+
+                <!-- 検索欄 -->
+                <form action="#" id="searchform">
+                    <input type="search" name="searchbox" list="search" class="box" placeholder="検索する単語を入力">
+                    <datalist id="search">
+                        <option value=""></option>
+                    </datalist>
+                </form>
+                
+                <ul id="output">
+                    <!-- 単語が表示される場所 -->
+                </ul>
+            </div>
+
+            <div class="center">
+                <textarea id="wordEdit" class="box"></textarea>
+                <textarea id="textEdit" class="box"></textarea>
+                <input type="submit" value="保存" name="save" id="save">
+            </div>
+        </div>
+        <script type="text/javascript" src="../js/common.js"></script>
+        <script type="text/javascript" src="../js/edit.js"></script>
+    </body>
+</html>
