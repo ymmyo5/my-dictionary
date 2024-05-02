@@ -10,17 +10,25 @@ window.onload = function() {
 
     // ローカルストレージにある単語と説明を取得して編集できるようにする
     var wordDetailElement = document.getElementById("wordEdit");
-    wordDetailElement.textContent = key;
+    wordDetailElement.value = key;
 
     var textValue = localStorage.getItem(key);
     var textDetailElement = document.getElementById("textEdit");
-    textDetailElement.textContent = textValue;
+    textDetailElement.value = textValue;
 
     // 保存ボタンのクリックイベントを追加
     var saveButton = document.getElementById('save');
     saveButton.addEventListener('click', function() {
+        var oldKey = key;
+        var newKey = document.getElementById("wordEdit").value;
         var textEdit = document.getElementById('textEdit').value;
-        localStorage.setItem(key, textEdit);
+        
+        if (oldKey !== newKey) {
+            localStorage.removeItem(oldKey);
+        }
+        
+        localStorage.setItem(newKey, textEdit);
         alert('正常に保存されました');
+        addList();
     });
 }

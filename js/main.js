@@ -1,13 +1,19 @@
 "use strict";
 
-// 単語と説明を保存する
-function saveFormData() {
-    var wordIn = document.getElementById("word").value;
-    var textIn = document.getElementById("textarea").value;
+// 保存ボタンのクリックイベントを追加
+var saveButton = document.getElementById('save');
+saveButton.addEventListener('click', function() {
+    var newKey = document.getElementById("word").value;
+    var textEdit = document.getElementById('textarea').value;
 
-    localStorage.setItem(wordIn, textIn);
-    addList();
-}
+    if (newKey === "" || textEdit === "") {
+        alert('内容を入力してください');
+    } else {
+        localStorage.setItem(newKey, textEdit);
+        alert('正常に保存されました');
+        addList();
+    }
+});
 
 // リストに単語を追加する
 function addList() {

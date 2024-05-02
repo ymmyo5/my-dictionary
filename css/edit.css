@@ -19,6 +19,7 @@
     width: 100%;
     box-sizing: border-box;
     font-size: x-large;
+    height: 100vh;
 }
 
 #textDisplay {
@@ -26,6 +27,7 @@
     box-sizing: border-box;
     font-size: x-large;
     margin: 10px;
+    overflow: auto;
 }
 
 input[name=save] {
