@@ -9,14 +9,14 @@ $(function() {
 // リストに単語を追加する
 function addList() {
     var ul = document.getElementById("output");
-    ul.innerHTML = "";      // リストをリセットする
+    ul.textContent = "";      // リストをリセットする
 
     for(var i = 0; i < localStorage.length; i++) {
         var list = document.createElement("li");
         var key = localStorage.key(i);
         var wordData = JSON.parse(localStorage.getItem(key));
         list.textContent = wordData.word; // 単語のみ表示
-        list.setAttribute("data-ruby", wordData.ruby); // ふりがなをdata属性に追加
+        list.setAttribute("ruby", wordData.ruby); // ふりがなをdata属性に追加
         ul.appendChild(list);
 
         // キーをクリックしたら遷移するリンクを追加する
