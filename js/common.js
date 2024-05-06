@@ -157,10 +157,15 @@ function down(button) {
 }
 
 // 検索機能
-// HTML要素が読み込まれた後に処理を実行する
 document.addEventListener("DOMContentLoaded", function() {
-    var searchForm = document.getElementById("searchform"); // 検索フォームの要素を取得
-    var outputList = document.getElementById("output").getElementsByTagName("li"); // 検索結果を表示する要素を取得
+    // 検索フォームの要素を取得
+    var searchForm = document.getElementById("searchform"); 
+
+    // 最初に一度リストを生成
+    addList();
+
+    // 検索結果を表示する要素を取得
+    var outputList = document.getElementById("output").getElementsByTagName("li"); 
 
     // 検索フォームの入力内容が変更された時の処理
     searchForm.addEventListener("input", function() {
@@ -180,7 +185,4 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     });
-
-    // 最初に一度リストを生成
-    addList();
 });
