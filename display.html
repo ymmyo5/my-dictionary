@@ -3,14 +3,14 @@
     <head>
     <meta charset="utf-8">
     <title>My辞典 - 単語の説明</title>
-    <link href="../css/common.css" rel="stylesheet" type="text/css" media="all">
-    <link href="../css/display.css" rel="stylesheet" type="text/css" media="all">
+    <link href="common.css" rel="stylesheet" type="text/css" media="all">
+    <link href="display.css" rel="stylesheet" type="text/css" media="all">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     </head>
     <body>
         <header class="header">
             <h1 class="logo">My辞典</h1>
-            <p class="nav"><a href="../index.html">新規追加</a></p>
+            <p class="nav"><a href="index.html">新規追加</a></p>
         </header>
         <div class="parent">
             <div class="side">
@@ -22,7 +22,9 @@
                 </table>
 
                 <!-- 検索欄 -->
-                <input type="search" id="search" name="searchbox" list="search" class="box" placeholder="検索する単語を入力">
+                <form action="#" id="searchform" onsubmit="return false;">
+                    <input type="search" id="search" name="searchbox" list="search" class="box" placeholder="検索する単語を入力">
+                </form>
                 
                 <ul id="output">
                     <!-- 単語が表示される場所 -->
@@ -38,6 +40,6 @@
                 <input type="submit" value="編集" name="edit" id="edit" onclick="edit()">
             </div>
         </div>
-        <script type="text/javascript" src="../js/common.js"></script>
+        <script type="text/javascript" src="common.js"></script>
     </body>
 </html>
