@@ -6,6 +6,28 @@ $(function() {
     $("body").css("margin-top", height + 10);//10pxだけ余裕をもたせる
 });
 
+// 保存ボタンのクリックイベントを追加
+function save() {
+    var newKey = document.getElementById("word").value;
+    var newRuby = document.getElementById("ruby").value;
+    var newText = document.getElementById('text').value;
+
+    if (newKey === "" || newRuby === "" || newText === "") {
+        alert("単語・ふりがな・説明をすべて入力してください");
+    } else {
+        // オブジェクトを作成し、必要なデータを格納
+        var wordData = {
+            word: newKey,
+            ruby: newRuby,
+            text: newText
+        };
+
+        localStorage.setItem(newKey, JSON.stringify(wordData));
+        alert('正常に保存されました');
+        addList();
+    }
+}
+
 // リストに単語を追加する
 function addList() {
     var ul = document.getElementById("output");
@@ -62,28 +84,6 @@ function displayWordDetail(key) {
 
     var textDetailElement = document.getElementById("text");
     textDetailElement.textContent = array.text;
-}
-
-// 保存ボタンのクリックイベントを追加
-function save() {
-    var newKey = document.getElementById("word").value;
-    var newRuby = document.getElementById("ruby").value;
-    var newText = document.getElementById('text').value;
-
-    if (newKey === "" || newRuby === "" || newText === "") {
-        alert("単語・ふりがな・説明をすべて入力してください");
-    } else {
-        // オブジェクトを作成し、必要なデータを格納
-        var wordData = {
-            word: newKey,
-            ruby: newRuby,
-            text: newText
-        };
-
-        localStorage.setItem(newKey, JSON.stringify(wordData));
-        alert('正常に保存されました');
-        addList();
-    }
 }
 
 var sort = "down"; // 初期ソート値：up
