@@ -76,14 +76,13 @@ function displayWordDetail(key) {
     var wordDetailElement = document.getElementById("word");
     wordDetailElement.textContent = key;
 
-    var json = localStorage.getItem(key);
-    var array = JSON.parse(json);
+    var json = JSON.parse(localStorage.getItem(key));
 
     var rubyDetailElement = document.getElementById("ruby");
-    rubyDetailElement.textContent = array.ruby;
+    rubyDetailElement.textContent = json.ruby;
 
     var textDetailElement = document.getElementById("text");
-    textDetailElement.textContent = array.text;
+    textDetailElement.textContent = json.text;
 }
 
 var sort = "down"; // 初期ソート値：up
