@@ -74,15 +74,22 @@ window.onload = function() {
 // ページ読み込み完了後に単語の詳細を表示する関数
 function displayWordDetail(key) {
     var wordDetailElement = document.getElementById("word");
-    wordDetailElement.textContent = key;
-
-    var json = JSON.parse(localStorage.getItem(key));
-
     var rubyDetailElement = document.getElementById("ruby");
-    rubyDetailElement.textContent = json.ruby;
-
     var textDetailElement = document.getElementById("text");
-    textDetailElement.textContent = json.text;
+
+    // ローカルストレージからJSON文字列を取得
+    var json = localStorage.getItem(key);
+
+    // JSON文字列が存在するかをチェック
+    if (json) {
+        // JSON文字列をオブジェクトに変換
+        var array = JSON.parse(json);
+
+        // 単語の詳細を表示する
+        wordDetailElement.textContent = array.word; // 単語
+        rubyDetailElement.textContent = array.ruby; // ふりがな
+        textDetailElement.textContent = array.text; // テキスト
+    }
 }
 
 var sort = "down"; // 初期ソート値：up
@@ -157,10 +164,15 @@ function down(button) {
 }
 
 // 検索機能
-// HTML要素が読み込まれた後に処理を実行する
 document.addEventListener("DOMContentLoaded", function() {
-    var searchForm = document.getElementById("searchform"); // 検索フォームの要素を取得
-    var outputList = document.getElementById("output").getElementsByTagName("li"); // 検索結果を表示する要素を取得
+    // 検索フォームの要素を取得
+    var searchForm = document.getElementById("searchform"); 
+
+    // 最初に一度リストを生成
+    addList();
+
+    // 検索結果を表示する要素を取得
+    var outputList = document.getElementById("output").getElementsByTagName("li"); 
 
     // 検索フォームの入力内容が変更された時の処理
     searchForm.addEventListener("input", function() {
@@ -180,7 +192,4 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     });
-
-    // 最初に一度リストを生成
-    addList();
 });
