@@ -74,15 +74,22 @@ window.onload = function() {
 // ページ読み込み完了後に単語の詳細を表示する関数
 function displayWordDetail(key) {
     var wordDetailElement = document.getElementById("word");
-    wordDetailElement.textContent = key;
-
-    var json = JSON.parse(localStorage.getItem(key));
-
     var rubyDetailElement = document.getElementById("ruby");
-    rubyDetailElement.textContent = json.ruby;
-
     var textDetailElement = document.getElementById("text");
-    textDetailElement.textContent = json.text;
+
+    // ローカルストレージからJSON文字列を取得
+    var json = localStorage.getItem(key);
+
+    // JSON文字列が存在するかをチェック
+    if (json) {
+        // JSON文字列をオブジェクトに変換
+        var array = JSON.parse(json);
+
+        // 単語の詳細を表示する
+        wordDetailElement.textContent = array.word; // 単語
+        rubyDetailElement.textContent = array.ruby; // ふりがな
+        textDetailElement.textContent = array.text; // テキスト
+    }
 }
 
 var sort = "down"; // 初期ソート値：up
