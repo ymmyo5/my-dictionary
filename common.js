@@ -160,7 +160,7 @@ function down(button) {
 // 検索機能
 // HTML要素が読み込まれた後に処理を実行する
 document.addEventListener("DOMContentLoaded", function() {
-    var searchForm = document.getElementById("search"); // 検索フォームの要素を取得
+    var searchForm = document.getElementById("searchform"); // 検索フォームの要素を取得
     var outputList = document.getElementById("output").getElementsByTagName("li"); // 検索結果を表示する要素を取得
 
     // 検索フォームの入力内容が変更された時の処理
@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function() {
         for (var i = 0; i < outputList.length; i++) {
             // output li要素のテキストを取得し、小文字に変換しておく
             var listItemText = outputList[i].textContent.toLowerCase();
-            var listItemRuby = outputList[i].getAttribute("data-ruby").toLowerCase();
+            var listItemRuby = outputList[i].getAttribute("ruby").toLowerCase();
 
             // 入力された文字列が含まれている場合は表示、それ以外は非表示にする
             if (listItemText.includes(searchString) || listItemRuby.includes(searchString)) {
