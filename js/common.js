@@ -39,7 +39,7 @@ function addList() {
         var wordData = JSON.parse(localStorage.getItem(key));
         list.textContent = wordData.word; // 単語のみ表示
         list.setAttribute("ruby", wordData.ruby); // ふりがなをdata属性に追加
-        ul.appendChild(list);
+        ul.appendChild(list); // 既存のリストに要素を追加
 
         // キーをクリックしたら遷移するリンクを追加する
         list.addEventListener("click", function(event) {
