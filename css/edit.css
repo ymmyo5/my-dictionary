@@ -14,4 +14,21 @@
     resize: none;
     font-size: large;
     box-sizing: border-box; /*　親要素に横幅を合わせる */
+    background: #cfe2ff;
+}
+
+/* スマホだけに適用するCSS */
+@media only screen and (max-width:360px) {
+
+    #word {
+        font-size: 20px;
+    }
+    
+    #ruby {
+        font-size: 15px;
+    }
+    
+    #text {
+        font-size: small;
+    }
 }

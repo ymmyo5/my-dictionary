@@ -2,6 +2,7 @@
 <html lang="ja">
     <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My辞典 - 辞典の編集</title>
     <link href="css/common.css" rel="stylesheet" type="text/css" media="all">
     <link href="css/edit.css" rel="stylesheet" type="text/css" media="all">
@@ -37,9 +38,11 @@
                     <textarea id="ruby" class="box"></textarea>
                 </div>
                 <textarea id="text" class="box"></textarea>
-                <input type="submit" value="保存" name="save" id="save" onclick="save()">
             </div>
         </div>
+        <footer>
+            <input type="submit" value="保存" name="save" id="save" onclick="save()">
+        </footer>
         <script type="text/javascript" src="js/common.js"></script>
     </body>
 </html>

@@ -9,8 +9,30 @@
 }
 
 #text {
-    margin: 0 0 5px; /* 編集ボタンより高く */
+    margin: 0;
     overflow-y: auto; /* サイドバーがコンテンツよりy軸に長い場合にスクロールバーを表示 */
     border-top: solid 10px #3978d6;
     background: #cfe2ff;
+}
+
+/* スマホだけに適用するCSS */
+@media only screen and (max-width:360px) {
+    #word, #ruby {
+        margin: 0;
+        padding: 5px;
+    }
+
+    #word {
+        font-size: 20px;
+    }
+    
+    #ruby {
+        font-size: 15px;
+        padding: 10.5px;
+    }
+    
+    #text {
+        border-top: solid 5px #3978d6;
+        font-size: small;
+    }
 }
