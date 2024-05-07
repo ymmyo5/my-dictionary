@@ -92,18 +92,18 @@ function displayWordDetail(key) {
     }
 }
 
-var sort = "down"; // 初期ソート値：up
+var sort = "up"; // 初期ソート値：up
 
 // 昇順・降順ボタンをクリックしたときの処理
 var button = document.getElementById("sort");
 button.addEventListener("click", function() {
     // ソート順を切り替える
-    if (sort === 'down') {
-        up(button);
-        sort = 'up';
-    } else {
+    if (sort === 'up') {
         down(button);
         sort = 'down';
+    } else {
+        up(button);
+        sort = 'up';
     }
 });
 
@@ -134,8 +134,8 @@ function up(button) {
         });
     }
 
-    // ボタンを↓に書き換える
-    button.textContent = "↓"
+    // ボタンを↑に書き換える
+    button.textContent = "↑"
 }
 
 // リストを降順に並べ替えるdown関数
@@ -160,7 +160,7 @@ function down(button) {
     }
 
         // ボタンを↓に書き換える
-        button.textContent = "↑"
+        button.textContent = "↓"
 }
 
 // 検索機能
