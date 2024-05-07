@@ -7,7 +7,6 @@ $(function() {
 });
 
 // 保存ボタンのクリックイベントを追加
-// eslint-disable-next-line no-unused-vars
 function save() {
     var newKey = document.getElementById("word").value;
     var newRuby = document.getElementById("ruby").value;
@@ -51,7 +50,6 @@ function addList() {
 }
 
 // リストを編集する
-// eslint-disable-next-line no-unused-vars
 function edit() {
     var queryString = window.location.search;
     var urlParams = new URLSearchParams(queryString);
