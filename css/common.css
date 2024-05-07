@@ -1,3 +1,4 @@
+@media screen and (min-width: 767px) {
 /* 全体の設定 */
 html, body {
     font-family: "游ゴシック Medium", "Yu Gothic Medium";
@@ -119,4 +120,5 @@ input[name=save] {
 input[name=edit] {
     align-self: flex-end;
     margin-top: auto;
+}
 }
