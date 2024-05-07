@@ -1,6 +1,6 @@
 /* 全体の設定 */
 html, body {
-    font-family: "游ゴシック Medium", "Yu Gothic Medium";
+    font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3";
     height: 100%;
 }
 
@@ -20,7 +20,7 @@ html, body {
 }
 
 .logo {
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .nav a {
@@ -126,50 +126,50 @@ input[name=edit] {
 }
 
 /* スマホだけに適用するCSS */
-@media only screen and (max-width:360px) {
-    .box {
-        width: 100%;
-    }
-    
-    /* ヘッダーのスタイル */
-    .header {
-        height: 5%;
+@media only screen and (max-width:390px) {
+    /* 全体の設定 */
+    html, body {
+        height: 100svh;
+        overflow-x: hidden;
     }
 
+    /* ヘッダーのスタイル */
     .logo {
-        font-size: 15px;
+        font-size: 20px;
     }
 
     .nav a {
-        font-size: 10px;
+        font-size: 15px;
     }
 
     /* サイドの設定 */
     .side {
-        flex: 0 0 60px; /* サイドバーの幅を指定 */
+        flex: 0 0 100px; /* サイドバーの幅を指定 */
+        height: 100svh;
     }
 
     table {
-        margin: 0;
-        border-top: solid 5px #3978d6;
-        border-bottom: solid 5px #3978d6;
+        margin: 1px;
+        border-top: solid 2px #3978d6;
+        border-bottom: solid 2px #3978d6;
     }
 
     #wordlist {
-        letter-spacing: 0px; /*　文字同士の間隔を追加 */
-        padding: 0px; /* テキストとの間隔を追加 */
-        font-size: 10px;
+        letter-spacing: 0px;
+        padding: 0px;
+        font-size: 15px;
     }
 
     #sort {
-        font-size: 8px;
-        padding: 4px;
-        margin: 8px 2px;
+        font-size: 20px;
+        padding: 10px;
+        margin: 1px;
     }
 
     #search {
-        font-size: 5px;
-        width: 50px;
+        font-size: 10px;
+        width: 90px;
+        margin: 0 0 5px;
     }
 
     li {
@@ -178,23 +178,21 @@ input[name=edit] {
     }
 
     /* センターの設定 */
-    input::placeholder {
-        font-size: 9px;
+    .center {
+        height: 100svh;
     }
-
-    textarea::placeholder {
-        font-size: small;
+    
+    .wr {
+        flex-direction: column;
     }
 
     /* 保存・編集ボタンの位置 */
     input[name=save] {
         font-size: 10px;
-        margin: 5px;
     }
 
     input[name=edit] {
         font-size: 10px;
-        margin: 5px;
     }
 
 }
