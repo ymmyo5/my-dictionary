@@ -11,7 +11,22 @@
     <body>
         <header class="header">
             <h1 class="logo">My辞典</h1>
-            <p class="nav"><a href="index.html">新規追加</a></p>
+
+            <!--スマホ用ハンバーガーメニュー-->
+            <div class="header2">
+                <a class="menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+    
+                <div class="drawer-nav">
+                    <ul class="output">
+                        <!-- 単語が表示される場所 -->
+                    </ul>
+                </div>
+            </div>
+
         </header>
         <div class="parent">
             <div class="side">
@@ -27,7 +42,7 @@
                     <input type="search" id="search" name="searchbox" list="search" class="box" placeholder="単語を検索">
                 </form>
                 
-                <ul id="output">
+                <ul class="output" id="updown">
                     <!-- 単語が表示される場所 -->
                 </ul>
             </div>
@@ -40,8 +55,10 @@
                     <textarea id="text" class="box" placeholder="単語の説明を入力"></textarea>
             </div>
         </div>
-        <footer>
-            <input type="submit" value="保存" name="save" id="save" onclick="save()">
+        <footer class="footer">
+            <ul>
+                <li class="sav"><a onclick="save()">保存</a></li>
+            </ul>
         </footer>
         <script type="text/javascript" src="./js/common.js"></script>
     </body>

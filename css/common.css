@@ -1,7 +1,9 @@
 /* 全体の設定 */
 html, body {
     font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3";
-    height: 100%;
+    margin: 0; /* デフォルトのマージンを削除 */
+    padding: 0; /* テキストとの間隔を削除 */
+    height: 100svh;
 }
 
 /* ヘッダーのスタイル */
@@ -38,15 +40,17 @@ html, body {
 
 /* サイドの設定 */
 .side {
-    flex: 0 0 180px; /* サイドバーの幅を指定 */
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    margin-left: 5px;
+    margin-right: 15px;
+}
+
+.header2 {
+    display: none;
 }
 
 table {
-    margin-left: 5px;
-    width: 90%;
     border-top: solid 5px #3978d6;
     border-bottom: solid 5px #3978d6;
 }
@@ -70,22 +74,21 @@ table {
     border-radius: 5px; /* 枠の角を丸く */
 }
 
-ul {
+.side ul {
     list-style: none; /* リストの・を非表示 */
     margin: 0; /* デフォルトのマージンを削除 */
     padding: 0; /* テキストとの間隔を削除 */
     height: 100%;
-    margin-right: 10px;
     border: double 5px #3978d6;
     overflow-y: auto; /* サイドバーがコンテンツよりy軸に長い場合にスクロールバーを表示 */
 }
 
-li {
+.side li {
     font-weight: bold;
     padding: 10px;
 }
 
-li:hover {
+.side li:hover {
     color: #2fc269;
 }
 
@@ -94,7 +97,7 @@ li:hover {
     flex: 1; /* 残りの空間を全て使用するために追加 */
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100svh;
 }
 
 .wr {
@@ -110,19 +113,54 @@ li:hover {
     height: 100%;
 }
 
-/* 保存・編集ボタンの位置 */
-footer {
-    position: relative;
+/* フッターの設定 */
+.footer {
+    background-color: orange;
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    height: 50px;
 }
 
-input[name=save] {
-    position: absolute;
-    right: 0;
+.footer ul {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-input[name=edit] {
-    position: absolute;
-    right: 0;
+.footer li {
+    line-height: 2.5;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    flex: 1;
+}
+
+.footer li a {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none; /* フッター項目の青線を非表示 */
+    font-size: 20px;
+}
+
+.era {
+    background-color: #858585;
+}
+
+.add {
+    background-color: rgb(255, 149, 57)
+}
+
+.sav {
+    background-color: rgb(160, 101, 255);
+}
+
+.edi {
+    background-color: #448fff;
 }
 
 /* スマホだけに適用するCSS */
@@ -134,47 +172,95 @@ input[name=edit] {
     }
 
     /* ヘッダーのスタイル */
-    .logo {
-        font-size: 20px;
+    .nav a {
+        display: none;
     }
 
-    .nav a {
-        font-size: 15px;
+    .header2 {
+        display: block;
+    }
+
+    .menu-btn, .menu-btn span {
+        transition: all .4s;
+    }
+
+    .menu-btn {
+        cursor: pointer;
+        display: block;
+        height: 25px;
+        margin: 0px;
+        position: relative; /* 右端に固定 */
+        width: 40px; /* メニューボタンの横幅 */
+    }
+
+    .menu-btn span {
+        background-color:#008033;
+        box-sizing: border-box;
+        left: 0;
+        height: 4px; /* メニューボタンの線の幅 */
+        position: absolute;
+        width: 100%;
+    }
+
+    .menu-btn span:nth-of-type(1) {
+        top: 0;
+    }
+
+    .menu-btn span:nth-of-type(2) {
+        top: 10px;
+    }
+
+    .menu-btn span:nth-of-type(3) {
+        top: 20px;
+    }
+
+    body.open {
+        overflow: hidden;
+    }
+
+    .drawer-nav {
+        background-color: #7297cfe1;
+        box-sizing: border-box;
+        left: -200%; /* メニューが左から出てくる */
+        height: 100%;
+        overflow-y: scroll;
+        position: fixed;
+        top: 0;
+        transition: all .5s;
+        width: 200px;
+    }
+
+    .drawer-nav.open {
+        left: 0;
+        transform: translateZ(0);
+    }
+
+    .drawer-nav ul {
+        box-sizing: border-box;
+        list-style: none;
+    }
+
+    .drawer-nav ul li {
+        box-sizing: border-box;
+        border-bottom: 1px solid #3978d6;
+    }
+
+    .drawer-nav ul li a {
+        box-sizing: border-box;
+        display: block;
+        font-size: 18px;
+        line-height: 28px;
+        padding: 5px 10px;
+        text-decoration: none;
     }
 
     /* サイドの設定 */
     .side {
-        flex: 0 0 100px; /* サイドバーの幅を指定 */
-        height: 100svh;
+        display: none;
     }
 
-    table {
-        margin: 1px;
-        border-top: solid 2px #3978d6;
-        border-bottom: solid 2px #3978d6;
-    }
-
-    #wordlist {
-        letter-spacing: 0px;
-        padding: 0px;
-        font-size: 15px;
-    }
-
-    #sort {
-        font-size: 20px;
-        padding: 10px;
-        margin: 1px;
-    }
-
-    #search {
-        font-size: 10px;
-        width: 90px;
-        margin: 0 0 5px;
-    }
-
-    li {
-        font-size: 10px;
-        padding: 5px;
+    .side li:hover {
+        color: #ffffff;
     }
 
     /* センターの設定 */
@@ -185,14 +271,4 @@ input[name=edit] {
     .wr {
         flex-direction: column;
     }
-
-    /* 保存・編集ボタンの位置 */
-    input[name=save] {
-        font-size: 10px;
-    }
-
-    input[name=edit] {
-        font-size: 10px;
-    }
-
 }
