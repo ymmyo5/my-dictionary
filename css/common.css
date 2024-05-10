@@ -116,10 +116,9 @@ table {
 
 /* フッターの設定 */
 .footer {
-    background-color: orange;
     position: fixed;
     width: 100%;
-    bottom: 0px;
+    bottom: 0;
     height: 50px;
 }
 
@@ -132,7 +131,7 @@ table {
 }
 
 .footer li {
-    line-height: 2.5;
+    line-height: 2.6;
     text-align: center;
     font-weight: bold;
     cursor: pointer;
