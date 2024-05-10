@@ -10,7 +10,7 @@
     </head>
     <body>
         <header class="header">
-            <h1 class="logo">My辞典</h1>
+            <h1 class="logo"><a href="index.html">My辞典</a></h1>
 
             <!--スマホ用ハンバーガーメニュー-->
             <div class="header2">
@@ -20,7 +20,8 @@
                     <span></span>
                 </a>
     
-            <div class="drawer-nav">
+                <div class="drawer-nav">
+                    <button class="sort">↑</button>
                     <ul class="output">
                         <!-- 単語が表示される場所 -->
                     </ul>
@@ -33,7 +34,7 @@
                 <table>
                     <tr>
                         <td><h2 id="wordlist">単語一覧</h2></td>
-                        <td><button id="sort">↑</button></td>
+                        <td><button class="sort">↑</button></td>
                     </tr>
                 </table>
                 
@@ -42,7 +43,7 @@
                     <input type="search" id="search" name="searchbox" list="search" class="box" placeholder="単語を検索">
                 </form>
                 
-                <ul class="output" id="updown">
+                <ul class="output">
                     <!-- 単語が表示される場所 -->
                 </ul>
             </div>

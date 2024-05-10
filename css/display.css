@@ -17,24 +17,20 @@
 }
 
 /* スマホだけに適用するCSS */
-@media only screen and (max-width:390px) {
-    #word, #ruby {
-        margin: 0;
-        padding: 5px;
-    }
-
+@media only screen and (max-width:500px) {
     #word {
-        font-size: 20px;
+        font-size: 35px;
+        padding: 10px 10px 0;
     }
     
     #ruby {
-        font-size: 15px;
-        padding: 1px 7px 10px;
+        font-size: 25px;
+        padding: 0 10px 10px;
     }
     
     #text {
         border-top: solid 2px #3978d6;
-        font-size: small;
-        margin: auto;
+        font-size: 20px;
+        padding: 10px;
     }
 }

@@ -1,11 +1,4 @@
 "use strict";
-
-//ヘッダーの高さ分だけコンテンツを下げる
-$(function() {
-    var height = $(".header").height();
-    $("body").css("margin-top", height + 2);//2pxだけ余裕をもたせる
-});
-
 $(function() {
 	$('.menu-btn').click(function() {
 		$('.drawer-nav').toggleClass('open');
@@ -42,6 +35,13 @@ function save() {
     var newRuby = document.getElementById("ruby").value;
     var newText = document.getElementById('text').value;
 
+    // ふりがなのバリデーション
+    var rubyPattern = /^[ぁ-ん0-9]+$/;
+    if (!rubyPattern.test(newRuby)) {
+        alert("ふりがなはひらがな・半角数字で入力してください");
+        return;
+    }
+
     if (newKey === "" || newRuby === "" || newText === "") {
         alert("単語・ふりがな・説明をすべて入力してください");
     } else {
@@ -55,7 +55,7 @@ function save() {
         localStorage.setItem(newKey, JSON.stringify(wordData));
         alert('正常に保存されました');
         addList();
-        // URL が index.html の場合は reset 関数を実行
+        // URLがindex.htmlの場合はreset関数を実行
         if (window.location.pathname.includes("index.html")) {
             reset();
         } else {
@@ -66,7 +66,7 @@ function save() {
 
 // リストに単語を追加する
 function addList() {
-    var uls = document.querySelectorAll(".output"); // output クラスを持つすべての要素を取得
+    var uls = document.querySelectorAll(".output"); // outputクラスを持つすべての要素を取得
     uls.forEach(function(ul) {
         ul.textContent = ""; // 各ul要素の中身をリセットする
 
@@ -159,16 +159,18 @@ function displayWordDetail(key) {
 var sort = "down"; // 初期ソート値：up
 
 // 昇順・降順ボタンをクリックしたときの処理
-var button = document.getElementById("sort");
-button.addEventListener("click", function() {
-    // ソート順を切り替える
-    if (sort === 'down') {
-        up(button);
-        sort = 'up';
-    } else {
-        down(button);
-        sort = 'down';
-    }
+var buttons = document.querySelectorAll(".sort");
+buttons.forEach(function(button) {
+    button.addEventListener("click", function() {
+        // ソート順を切り替える
+        if (sort === 'down') {
+            up(button);
+            sort = 'up';
+        } else {
+            down(button);
+            sort = 'down';
+        }
+    });
 });
 
 // キーを配列に取得
@@ -183,23 +185,25 @@ function up(button) {
         return a.localeCompare(b, 'ja');
     });
 
-    var ul = document.getElementById("updown");
-    ul.innerHTML = ""; // リストをリセットする
+    var lists = document.querySelectorAll(".output");
+    lists.forEach(function(list) {
+        list.innerHTML = ""; // リストをリセットする
 
-    for(var i = 0; i < keys.length; i++) {
-        var list = document.createElement("li");
-        list.textContent = keys[i];
-        ul.appendChild(list);
+        for(var i = 0; i < keys.length; i++) {
+            var listItem = document.createElement("li");
+            listItem.textContent = keys[i];
+            list.appendChild(listItem);
 
-        // キーをクリックしたら遷移するリンクを追加する
-        list.addEventListener("click", function(event) {
-            var word = event.target.textContent;
-            window.location.href = "display.html?key=" + encodeURIComponent(word);
-        });
-    }
+            // キーをクリックしたら遷移するリンクを追加する
+            listItem.addEventListener("click", function(event) {
+                var word = event.target.textContent;
+                window.location.href = "display.html?key=" + encodeURIComponent(word);
+            });
+        }
+    });
 
     // ボタンを↓に書き換える
-    button.textContent = "↓"
+    button.textContent = "↓";
 }
 
 // リストを降順に並べ替えるdown関数
@@ -208,24 +212,27 @@ function down(button) {
         return b.localeCompare(a, 'ja');
     });
 
-    var ul = document.getElementById("updown");
-    ul.innerHTML = ""; // リストをリセットする
+    var lists = document.querySelectorAll(".output");
+    lists.forEach(function(list) {
+        list.innerHTML = ""; // リストをリセットする
 
-    for(var i = 0; i < keys.length; i++) {
-        var list = document.createElement("li");
-        list.textContent = keys[i];
-        ul.appendChild(list);
+        for(var i = 0; i < keys.length; i++) {
+            var listItem = document.createElement("li");
+            listItem.textContent = keys[i];
+            list.appendChild(listItem);
 
-        // キーをクリックしたら遷移するリンクを追加する
-        list.addEventListener("click", function(event) {
-            var word = event.target.textContent;
-            window.location.href = "display.html?key=" + encodeURIComponent(word);
-        });
-    }
+            // キーをクリックしたら遷移するリンクを追加する
+            listItem.addEventListener("click", function(event) {
+                var word = event.target.textContent;
+                window.location.href = "display.html?key=" + encodeURIComponent(word);
+            });
+        }
+    });
 
-        // ボタンを↑に書き換える
-        button.textContent = "↑"
+    // ボタンを↑に書き換える
+    button.textContent = "↑";
 }
+
 
 // 検索機能
 function setupSearch() {

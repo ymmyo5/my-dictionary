@@ -25,23 +25,26 @@ html, body {
     font-size: 20px;
 }
 
-.nav a {
+.logo a {
     text-decoration: none; /* 新規追加の青線を非表示 */
 }
 
-.nav a:visited {
+.logo a:visited {
     color: inherit; /* 新規追加を白のままにする */
 }
 
 /* 親の設定 */
 .parent {
     display: flex; /* 横並びにする */
+    padding-top: 52px;
+    padding-bottom: 52px;
 }
 
 /* サイドの設定 */
 .side {
     display: flex;
     flex-direction: column;
+    height: 100svh;
     margin-left: 5px;
     margin-right: 15px;
 }
@@ -61,12 +64,12 @@ table {
     padding: 10px; /* テキストとの間隔を追加 */
 }
 
-#sort {
+.sort {
     background-color: #ffd000;
     margin-bottom: 5px; /* wordlistと高さを合わせる */
 }
 
-#sort:hover {
+.sort:hover {
     background-color:#ffe77c;
 }
 
@@ -80,7 +83,7 @@ table {
     padding: 0; /* テキストとの間隔を削除 */
     height: 100%;
     border: double 5px #3978d6;
-    overflow-y: auto; /* サイドバーがコンテンツよりy軸に長い場合にスクロールバーを表示 */
+    overflow-y: scroll;
 }
 
 .side li {
@@ -164,7 +167,7 @@ table {
 }
 
 /* スマホだけに適用するCSS */
-@media only screen and (max-width:390px) {
+@media only screen and (max-width:500px) {
     /* 全体の設定 */
     html, body {
         height: 100svh;
@@ -220,7 +223,6 @@ table {
 
     .drawer-nav {
         background-color: #7297cfe1;
-        box-sizing: border-box;
         left: -200%; /* メニューが左から出てくる */
         height: 100%;
         overflow-y: scroll;
@@ -243,13 +245,13 @@ table {
     .drawer-nav ul li {
         box-sizing: border-box;
         border-bottom: 1px solid #3978d6;
+        padding: 10px;
     }
 
     .drawer-nav ul li a {
         box-sizing: border-box;
         display: block;
         font-size: 18px;
-        line-height: 28px;
         padding: 5px 10px;
         text-decoration: none;
     }
@@ -259,8 +261,13 @@ table {
         display: none;
     }
 
-    .side li:hover {
-        color: #ffffff;
+    .sort {
+        background-color: #ffd000;
+        margin: 10px;
+    }
+    
+    .sort:hover {
+        background-color:#ffe77c;
     }
 
     /* センターの設定 */
