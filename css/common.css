@@ -1,36 +1,53 @@
 /* 全体の設定 */
 html, body {
-    font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3";
+    font-family: "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", sans-serif;
     margin: 0; /* デフォルトのマージンを削除 */
     padding: 0; /* テキストとの間隔を削除 */
     height: 100svh;
+    color: #494949; /* 文字色 */
+    scroll-behavior: smooth;
 }
 
 /* ヘッダーのスタイル */
 .header {
     height: 50px;
-    background-color: #2fc269;
+    background-color: #5ad78c;
     position: fixed;
+    margin: 0;
     top: 0;
     left: 0;
     right: 0;
-    display: flex; /* 子要素を横並びにするために追加 */
-    justify-content: space-between; /* 子要素を左右に分散配置するために追加 */
-    align-items: center;
     color: #fff;
-    padding: 0 25px;
 }
 
 .logo {
     font-size: 20px;
+    text-align: center;
+    margin: 10px;
 }
 
 .logo a {
-    text-decoration: none; /* 新規追加の青線を非表示 */
+    color: #fff;
+    text-decoration: none; /* ロゴの青線を非表示 */
+    position: relative;
+    padding: 0 55px;
 }
 
-.logo a:visited {
-    color: inherit; /* 新規追加を白のままにする */
+.logo a:before, .logo a:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 45px;
+    height: 1px;
+    background-color: #008033;
+}
+
+.logo a:before {
+    left:0;
+}
+
+.logo a:after {
+    right: 0;
 }
 
 /* 親の設定 */
@@ -54,19 +71,26 @@ html, body {
 }
 
 table {
-    border-top: solid 5px #3978d6;
-    border-bottom: solid 5px #3978d6;
+    background: #f4f4f4; /* 背景色 */
+    border-left: solid 5px #7db4e6; /* 左線 */
+    border-bottom: solid 3px #d7d7d7; /* 下線 */
 }
 
 #wordlist {
     margin: 0;
+    font-size: 20px;
     letter-spacing: 2px; /*　文字同士の間隔を追加 */
     padding: 10px; /* テキストとの間隔を追加 */
 }
 
 .sort {
     background-color: #ffd000;
-    margin-bottom: 5px; /* wordlistと高さを合わせる */
+    border: #494949;
+	text-align: center;
+    margin: 0 15px 5px 0;
+	padding: 1px 8px;
+	border-radius: 0.3rem;
+	border-bottom: 7px solid #d6af00;
 }
 
 .sort:hover {
@@ -79,11 +103,13 @@ table {
 
 .side ul {
     list-style: none; /* リストの・を非表示 */
-    margin: 0; /* デフォルトのマージンを削除 */
-    padding: 0; /* テキストとの間隔を削除 */
-    border: double 5px #3978d6;
+    margin: 6px;
+    background: #cce6ff;
+    box-shadow: 0px 0px 0px 5px #cce6ff;
+    border: dashed 2px white;
+    padding: 0.2em 0.5em;
     height: 100%;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .side li {
@@ -112,16 +138,16 @@ table {
 }
 
 #text {
-    width: 100%;
+    box-sizing: border-box;
+    width: 97%;
     height: calc(100% - 50px);
 }
 
 /* フッターの設定 */
 .footer {
-    background-color: orange;
     position: fixed;
     width: 100%;
-    bottom: 0px;
+    bottom: 0;
     height: 50px;
 }
 
@@ -134,7 +160,7 @@ table {
 }
 
 .footer li {
-    line-height: 2.5;
+    line-height: 2.6;
     text-align: center;
     font-weight: bold;
     cursor: pointer;
@@ -151,19 +177,55 @@ table {
 }
 
 .era {
-    background-color: #858585;
+	border-radius: 0.3rem;
+	background-color: #bebebe;
+	border-image-source: repeating-linear-gradient(45deg, #808080 0, #808080 6px, rgba(0, 0, 0, 0) 6px, rgba(0, 0, 0, 0) 8px);
+	border-image-slice: 4;
+	border-width: 4px;
+	border-style: solid;
+}
+
+.era:hover {
+	border: 4px solid #808080;
 }
 
 .add {
-    background-color: rgb(255, 149, 57)
+	border-radius: 0.3rem;
+	background-color: #e67e7e;
+	border-image-source: repeating-linear-gradient(45deg, #ea4343 0, #ea4343 6px, rgba(0, 0, 0, 0) 6px, rgba(0, 0, 0, 0) 8px);
+	border-image-slice: 4;
+	border-width: 4px;
+	border-style: solid;
 }
 
-.sav {
-    background-color: rgb(160, 101, 255);
+.add:hover {
+	border: 4px solid #ea4343;
 }
 
 .edi {
-    background-color: #448fff;
+	border-radius: 0.3rem;
+	background-color: #ffe18e;
+	border-image-source: repeating-linear-gradient(45deg, #ffca37 0, #ffca37 6px, rgba(0, 0, 0, 0) 6px, rgba(0, 0, 0, 0) 8px);
+	border-image-slice: 4;
+	border-width: 4px;
+	border-style: solid;
+}
+
+.edi:hover {
+	border: 4px solid #ffca37;
+}
+
+.sav {
+	border-radius: 0.3rem;
+	background-color: #60bbd9;
+	border-image-source: repeating-linear-gradient(45deg, #27acd9 0, #27acd9 6px, rgba(0, 0, 0, 0) 6px, rgba(0, 0, 0, 0) 8px);
+	border-image-slice: 4;
+	border-width: 4px;
+	border-style: solid;
+}
+
+.sav:hover {
+	border: 4px solid #27acd9;
 }
 
 /* スマホだけに適用するCSS */
@@ -179,8 +241,23 @@ table {
         display: none;
     }
 
+    .header {
+        display: flex; /* 子要素を横並びにするために追加 */
+        justify-content: space-between; /* 子要素を左右に分散配置するために追加 */
+        align-items: center;
+    }
+
+    .logo a {
+        padding: 10px;
+    }
+
+    .logo a:before, .logo a:after {
+        display: none;
+    }
+
     .header2 {
         display: block;
+        padding: 10px;
     }
 
     .menu-btn, .menu-btn span {

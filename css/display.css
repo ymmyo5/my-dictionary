@@ -12,8 +12,13 @@
     margin: 0;
     padding: 10px;
     overflow-y: auto; /* サイドバーがコンテンツよりy軸に長い場合にスクロールバーを表示 */
-    border-top: solid 5px #3978d6;
-    background: #cfe2ff;
+    margin: 6px; /* デフォルトのマージンを削除 */
+    background: #cce6ff;
+    box-shadow: 0px 0px 0px 5px #cce6ff;
+    border: dashed 2px white;
+    padding: 0.2em 0.5em;
+    height: 100%;
+    overflow-y: auto;
 }
 
 /* スマホだけに適用するCSS */
@@ -29,8 +34,8 @@
     }
     
     #text {
-        border-top: solid 2px #3978d6;
+        box-sizing: border-box;
         font-size: 20px;
-        width: 95vw;
+        width: 97vw;
     }
 }
