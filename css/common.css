@@ -4,6 +4,7 @@ html, body {
     margin: 0; /* デフォルトのマージンを削除 */
     padding: 0; /* テキストとの間隔を削除 */
     height: 100svh;
+    scroll-behavior: smooth;
 }
 
 /* ヘッダーのスタイル */
@@ -26,11 +27,8 @@ html, body {
 }
 
 .logo a {
-    text-decoration: none; /* 新規追加の青線を非表示 */
-}
-
-.logo a:visited {
-    color: inherit; /* 新規追加を白のままにする */
+    color: #fff;
+    text-decoration: none; /* ロゴの青線を非表示 */
 }
 
 /* 親の設定 */
