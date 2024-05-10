@@ -1,11 +1,5 @@
 "use strict";
 
-//ヘッダーの高さ分だけコンテンツを下げる
-$(function() {
-    var height = $(".header").height();
-    $("body").css("margin-top", height + 2);//2pxだけ余裕をもたせる
-});
-
 $(function() {
 	$('.menu-btn').click(function() {
 		$('.drawer-nav').toggleClass('open');

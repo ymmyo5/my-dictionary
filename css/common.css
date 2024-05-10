@@ -36,6 +36,8 @@ html, body {
 /* 親の設定 */
 .parent {
     display: flex; /* 横並びにする */
+    padding-top: 52px;
+    padding-bottom: 52px;
 }
 
 /* サイドの設定 */
@@ -243,6 +245,7 @@ table {
     .drawer-nav ul li {
         box-sizing: border-box;
         border-bottom: 1px solid #3978d6;
+        padding: 10px;
     }
 
     .drawer-nav ul li a {
@@ -267,8 +270,20 @@ table {
     .center {
         height: 100svh;
     }
+
+    .center #text {
+        font-size: 20px;
+    }
     
     .wr {
         flex-direction: column;
+    }
+
+    .wr #word {
+        font-size: 30px;
+    }
+
+    .wr #ruby {
+        font-size: 20px;
     }
 }
