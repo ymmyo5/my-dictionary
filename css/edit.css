@@ -17,17 +17,20 @@
     background: #cfe2ff;
 }
 
-/* スマホだけに適用するCSS */
-@media only screen and (max-width:390px) {
+@media only screen and (max-width:500px) {
     #word {
-        font-size: 20px;
+        font-size: 35px;
+        padding: 10px;
     }
     
     #ruby {
-        font-size: 15px;
+        font-size: 25px;
+        padding: 10px
     }
     
     #text {
-        font-size: small;
+        border-top: solid 2px #3978d6;
+        font-size: 25px;
+        padding: 10px;
     }
 }
