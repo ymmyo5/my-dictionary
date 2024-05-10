@@ -36,6 +36,7 @@ html, body {
 /* 親の設定 */
 .parent {
     display: flex; /* 横並びにする */
+    height: 100svh;
     padding-top: 52px;
     padding-bottom: 52px;
 }
@@ -44,9 +45,8 @@ html, body {
 .side {
     display: flex;
     flex-direction: column;
-    height: 100svh;
-    margin-left: 5px;
-    margin-right: 15px;
+    margin: 0 5px;
+    height: 100%;
 }
 
 .header2 {
@@ -81,8 +81,8 @@ table {
     list-style: none; /* リストの・を非表示 */
     margin: 0; /* デフォルトのマージンを削除 */
     padding: 0; /* テキストとの間隔を削除 */
-    height: 100%;
     border: double 5px #3978d6;
+    height: 100%;
     overflow-y: scroll;
 }
 
@@ -113,7 +113,7 @@ table {
 
 #text {
     width: 100%;
-    height: 100%;
+    height: calc(100% - 50px);
 }
 
 /* フッターの設定 */
@@ -224,7 +224,7 @@ table {
     .drawer-nav {
         background-color: #7297cfe1;
         left: -200%; /* メニューが左から出てくる */
-        height: 100%;
+        height: calc(100% - 50px);
         overflow-y: scroll;
         position: fixed;
         top: 0;
@@ -240,10 +240,12 @@ table {
     .drawer-nav ul {
         box-sizing: border-box;
         list-style: none;
+        height: 100%;
+        overflow-y: scroll;
+        overscroll-behavior: none;
     }
 
     .drawer-nav ul li {
-        box-sizing: border-box;
         border-bottom: 1px solid #3978d6;
         padding: 10px;
     }
@@ -277,5 +279,6 @@ table {
     
     .wr {
         flex-direction: column;
+        width: 100vw;
     }
 }

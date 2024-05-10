@@ -13,6 +13,7 @@
 #text {
     resize: none;
     font-size: large;
+    padding: 10px;
     box-sizing: border-box; /*　親要素に横幅を合わせる */
     background: #cfe2ff;
 }
@@ -30,7 +31,7 @@
     
     #text {
         border-top: solid 2px #3978d6;
-        font-size: 25px;
-        padding: 10px;
+        font-size: 20px;
+        width: 100vw;
     }
 }
