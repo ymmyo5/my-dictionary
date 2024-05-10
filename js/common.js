@@ -36,7 +36,7 @@ function save() {
     var newText = document.getElementById('text').value;
 
     // ふりがなのバリデーション
-    var rubyPattern = /^[ぁ-ん0-9]+$/;
+    var rubyPattern = /^[ぁ-んー0-9]+$/;
     if (!rubyPattern.test(newRuby)) {
         alert("ふりがなはひらがな・半角数字で入力してください");
         return;
@@ -58,8 +58,6 @@ function save() {
         // URLがindex.htmlの場合はreset関数を実行
         if (window.location.pathname.includes("index.html")) {
             reset();
-        } else {
-            addList();
         }
     }
 }
@@ -158,31 +156,43 @@ function displayWordDetail(key) {
 
 var sort = "down"; // 初期ソート値：up
 
-// 昇順・降順ボタンをクリックしたときの処理
-var buttons = document.querySelectorAll(".sort");
-buttons.forEach(function(button) {
-    button.addEventListener("click", function() {
-        // ソート順を切り替える
-        if (sort === 'down') {
-            up(button);
-            sort = 'up';
-        } else {
-            down(button);
-            sort = 'down';
-        }
-    });
-});
-
-// キーを配列に取得
+// キーを配列に取得し、ふりがなも取得する
 var keys = [];
+var rubies = {}; // キーに対応するふりがなを保持するオブジェクト
 for (var i = 0; i < localStorage.length; i++) {
-    keys.push(localStorage.key(i));
+    var key = localStorage.key(i);
+    var wordData = JSON.parse(localStorage.getItem(key));
+    keys.push(key); // キーを配列に追加
+    rubies[key] = wordData.ruby; // キーに対応するふりがなをオブジェクトに追加
 }
+
+// 昇順・降順ボタンのイベントリスナーを追加する関数
+function addSortEventListener() {
+    var sort = 'down'; // 初期ソートは降順
+    var buttons = document.querySelectorAll(".sort");
+    buttons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            // ソート順を切り替える
+            if (sort === 'down') {
+                up(button);
+                sort = 'up';
+            } else {
+                down(button);
+                sort = 'down';
+            }
+        });
+    });
+}
+
+// 関数を呼び出して昇順・降順ボタンのイベントリスナーを追加
+addSortEventListener();
 
 // リストを昇順に並べ替えるup関数
 function up(button) {
     keys.sort((a, b) => {
-        return a.localeCompare(b, 'ja');
+        var aRuby = rubies[a].toLowerCase(); // ふりがなを取得して小文字に変換
+        var bRuby = rubies[b].toLowerCase(); // ふりがなを取得して小文字に変換
+        return aRuby.localeCompare(bRuby, 'ja');
     });
 
     var lists = document.querySelectorAll(".output");
@@ -190,8 +200,9 @@ function up(button) {
         list.innerHTML = ""; // リストをリセットする
 
         for(var i = 0; i < keys.length; i++) {
+            var key = keys[i];
             var listItem = document.createElement("li");
-            listItem.textContent = keys[i];
+            listItem.textContent = key;
             list.appendChild(listItem);
 
             // キーをクリックしたら遷移するリンクを追加する
@@ -203,13 +214,20 @@ function up(button) {
     });
 
     // ボタンを↓に書き換える
-    button.textContent = "↓";
+    if (button.parentNode.classList.contains('drawer-nav')) {
+        // もし親要素のクラス名が 'drawer-nav' ならば
+        button.textContent = "降順↓";
+    } else {
+        button.textContent = "↓";
+    }
 }
 
 // リストを降順に並べ替えるdown関数
 function down(button) {
     keys.sort((a, b) => {
-        return b.localeCompare(a, 'ja');
+        var aRuby = rubies[a].toLowerCase(); // ふりがなを取得して小文字に変換
+        var bRuby = rubies[b].toLowerCase(); // ふりがなを取得して小文字に変換
+        return bRuby.localeCompare(aRuby, 'ja');
     });
 
     var lists = document.querySelectorAll(".output");
@@ -217,8 +235,9 @@ function down(button) {
         list.innerHTML = ""; // リストをリセットする
 
         for(var i = 0; i < keys.length; i++) {
+            var key = keys[i];
             var listItem = document.createElement("li");
-            listItem.textContent = keys[i];
+            listItem.textContent = key;
             list.appendChild(listItem);
 
             // キーをクリックしたら遷移するリンクを追加する
@@ -230,9 +249,13 @@ function down(button) {
     });
 
     // ボタンを↑に書き換える
-    button.textContent = "↑";
+    if (button.parentNode.classList.contains('drawer-nav')) {
+        // もし親要素のクラス名が 'drawer-nav' ならば
+        button.textContent = "昇順↑";
+    } else {
+        button.textContent = "↑";
+    }
 }
-
 
 // 検索機能
 function setupSearch() {

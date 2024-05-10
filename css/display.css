@@ -10,7 +10,7 @@
 
 #text {
     margin: 0;
-    padding: 0px;
+    padding: 10px;
     overflow-y: auto; /* サイドバーがコンテンツよりy軸に長い場合にスクロールバーを表示 */
     border-top: solid 5px #3978d6;
     background: #cfe2ff;
@@ -31,6 +31,6 @@
     #text {
         border-top: solid 2px #3978d6;
         font-size: 20px;
-        padding: 10px;
+        width: 95vw;
     }
 }
