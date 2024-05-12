@@ -11,7 +11,7 @@ html, body {
 /* ヘッダーのスタイル */
 .header {
     height: 50px;
-    background-color: #5ad78c;
+    background-color: #90EE90;
     position: fixed;
     margin: 0;
     top: 0;
@@ -39,7 +39,7 @@ html, body {
     top: 50%;
     width: 45px;
     height: 1px;
-    background-color: #008033;
+    background-color: #71b971;
 }
 
 .logo a:before {
@@ -118,7 +118,7 @@ table {
 }
 
 .side li:hover {
-    color: #2fc269;
+    color: #fff;
 }
 
 /* センターの設定 */
@@ -178,54 +178,54 @@ table {
 
 .era {
 	border-radius: 0.3rem;
-	background-color: #bebebe;
-	border-image-source: repeating-linear-gradient(45deg, #808080 0, #808080 6px, rgba(0, 0, 0, 0) 6px, rgba(0, 0, 0, 0) 8px);
+	background-color: #DCC2FF;
+	border-image-source: repeating-linear-gradient(45deg, #D0B0FF 0, #D0B0FF 6px, rgba(0, 0, 0, 0) 6px, rgba(0, 0, 0, 0) 8px);
 	border-image-slice: 4;
 	border-width: 4px;
 	border-style: solid;
 }
 
 .era:hover {
-	border: 4px solid #808080;
+	border: 4px solid #D0B0FF;
 }
 
 .add {
 	border-radius: 0.3rem;
-	background-color: #e67e7e;
-	border-image-source: repeating-linear-gradient(45deg, #ea4343 0, #ea4343 6px, rgba(0, 0, 0, 0) 6px, rgba(0, 0, 0, 0) 8px);
+	background-color: #FFC7AF;
+	border-image-source: repeating-linear-gradient(45deg, #FFAD90 0, #FFAD90 6px, rgba(0, 0, 0, 0) 6px, rgba(0, 0, 0, 0) 8px);
 	border-image-slice: 4;
 	border-width: 4px;
 	border-style: solid;
 }
 
 .add:hover {
-	border: 4px solid #ea4343;
+	border: 4px solid #FFAD90;
 }
 
 .edi {
 	border-radius: 0.3rem;
-	background-color: #ffe18e;
-	border-image-source: repeating-linear-gradient(45deg, #ffca37 0, #ffca37 6px, rgba(0, 0, 0, 0) 6px, rgba(0, 0, 0, 0) 8px);
+	background-color: #BAD3FF;
+	border-image-source: repeating-linear-gradient(45deg, #A4C6FF 0, #A4C6FF 6px, rgba(0, 0, 0, 0) 6px, rgba(0, 0, 0, 0) 8px);
 	border-image-slice: 4;
 	border-width: 4px;
 	border-style: solid;
 }
 
 .edi:hover {
-	border: 4px solid #ffca37;
+	border: 4px solid #A4C6FF;
 }
 
 .sav {
 	border-radius: 0.3rem;
-	background-color: #60bbd9;
-	border-image-source: repeating-linear-gradient(45deg, #27acd9 0, #27acd9 6px, rgba(0, 0, 0, 0) 6px, rgba(0, 0, 0, 0) 8px);
+	background-color: #FFBEDA	;
+	border-image-source: repeating-linear-gradient(45deg, #FFABCE 0, #FFABCE 6px, rgba(0, 0, 0, 0) 6px, rgba(0, 0, 0, 0) 8px);
 	border-image-slice: 4;
 	border-width: 4px;
 	border-style: solid;
 }
 
 .sav:hover {
-	border: 4px solid #27acd9;
+	border: 4px solid #FFABCE;
 }
 
 /* スマホだけに適用するCSS */
@@ -274,7 +274,7 @@ table {
     }
 
     .menu-btn span {
-        background-color:#008033;
+        background-color:#71b971;
         box-sizing: border-box;
         left: 0;
         height: 4px; /* メニューボタンの線の幅 */
@@ -299,7 +299,7 @@ table {
     }
 
     .drawer-nav {
-        background-color: #7297cfe1;
+        background-color: #87cfebf3;
         left: -200%; /* メニューが左から出てくる */
         height: calc(100% - 50px);
         overflow-y: scroll;

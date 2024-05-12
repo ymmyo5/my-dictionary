@@ -55,6 +55,8 @@ function save() {
         localStorage.setItem(newKey, JSON.stringify(wordData));
         alert('正常に保存されました');
         addList();
+        // ページを再読み込み
+        location.reload();
         // URLがindex.htmlの場合はreset関数を実行
         if (window.location.pathname.includes("index.html")) {
             reset();
@@ -109,14 +111,24 @@ function erase() {
     var localKey = localStorage.getItem(word); // 指定されたキーのローカルストレージの値を取得
 
     if (localKey !== null) {
-        // キーに関連するローカルストレージの値を削除
-        localStorage.removeItem(word);
-        alert('辞典から削除されました');
-        reset()
+        // ユーザーに削除を確認するダイアログを表示
+        var confirmDelete = confirm("本当に削除しますか？");
+
+        if (confirmDelete) {
+            // キーに関連するローカルストレージの値を削除
+            localStorage.removeItem(word);
+            alert('辞典から削除されました');
+            reset();
+            // ページを再読み込み
+            location.reload();
+        } else {
+            alert('削除がキャンセルされました');
+        }
     } else {
         alert('削除するデータが見つかりませんでした');
     }
 }
+
 
 // ページ読み込み完了後に実行される
 window.onload = function() {
