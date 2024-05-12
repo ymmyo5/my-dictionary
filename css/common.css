@@ -1,68 +1,99 @@
 /* 全体の設定 */
 html, body {
-    font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3";
-    height: 100%;
+    font-family: "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", sans-serif;
+    margin: 0; /* デフォルトのマージンを削除 */
+    padding: 0; /* テキストとの間隔を削除 */
+    height: 100svh;
+    color: #494949; /* 文字色 */
+    scroll-behavior: smooth;
 }
 
 /* ヘッダーのスタイル */
 .header {
     height: 50px;
-    background-color: #2fc269;
+    background-color: #90EE90;
     position: fixed;
+    margin: 0;
     top: 0;
     left: 0;
     right: 0;
-    display: flex; /* 子要素を横並びにするために追加 */
-    justify-content: space-between; /* 子要素を左右に分散配置するために追加 */
-    align-items: center;
     color: #fff;
-    padding: 0 25px;
 }
 
 .logo {
     font-size: 20px;
+    text-align: center;
+    margin: 10px;
 }
 
-.nav a {
-    text-decoration: none; /* 新規追加の青線を非表示 */
+.logo a {
+    color: #fff;
+    text-decoration: none; /* ロゴの青線を非表示 */
+    position: relative;
+    padding: 0 55px;
 }
 
-.nav a:visited {
-    color: inherit; /* 新規追加を白のままにする */
+.logo a:before, .logo a:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 45px;
+    height: 1px;
+    background-color: #71b971;
+}
+
+.logo a:before {
+    left:0;
+}
+
+.logo a:after {
+    right: 0;
 }
 
 /* 親の設定 */
 .parent {
     display: flex; /* 横並びにする */
+    height: 100svh;
+    padding-top: 52px;
+    padding-bottom: 52px;
 }
 
 /* サイドの設定 */
 .side {
-    flex: 0 0 180px; /* サイドバーの幅を指定 */
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    margin: 0 5px;
+    height: 100%;
+}
+
+.header2 {
+    display: none;
 }
 
 table {
-    margin-left: 5px;
-    width: 90%;
-    border-top: solid 5px #3978d6;
-    border-bottom: solid 5px #3978d6;
+    background: #f4f4f4; /* 背景色 */
+    border-left: solid 5px #7db4e6; /* 左線 */
+    border-bottom: solid 3px #d7d7d7; /* 下線 */
 }
 
 #wordlist {
     margin: 0;
+    font-size: 20px;
     letter-spacing: 2px; /*　文字同士の間隔を追加 */
     padding: 10px; /* テキストとの間隔を追加 */
 }
 
-#sort {
+.sort {
     background-color: #ffd000;
-    margin-bottom: 5px; /* wordlistと高さを合わせる */
+    border: #494949;
+	text-align: center;
+    margin: 0 15px 5px 0;
+	padding: 1px 8px;
+	border-radius: 0.3rem;
+	border-bottom: 7px solid #d6af00;
 }
 
-#sort:hover {
+.sort:hover {
     background-color:#ffe77c;
 }
 
@@ -70,23 +101,24 @@ table {
     border-radius: 5px; /* 枠の角を丸く */
 }
 
-ul {
+.side ul {
     list-style: none; /* リストの・を非表示 */
-    margin: 0; /* デフォルトのマージンを削除 */
-    padding: 0; /* テキストとの間隔を削除 */
+    margin: 6px;
+    background: #cce6ff;
+    box-shadow: 0px 0px 0px 5px #cce6ff;
+    border: dashed 2px white;
+    padding: 0.2em 0.5em;
     height: 100%;
-    margin-right: 10px;
-    border: double 5px #3978d6;
-    overflow-y: auto; /* サイドバーがコンテンツよりy軸に長い場合にスクロールバーを表示 */
+    overflow-y: auto;
 }
 
-li {
+.side li {
     font-weight: bold;
     padding: 10px;
 }
 
-li:hover {
-    color: #2fc269;
+.side li:hover {
+    color: #fff;
 }
 
 /* センターの設定 */
@@ -94,7 +126,7 @@ li:hover {
     flex: 1; /* 残りの空間を全て使用するために追加 */
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100svh;
 }
 
 .wr {
@@ -106,27 +138,98 @@ li:hover {
 }
 
 #text {
+    box-sizing: border-box;
     width: 100%;
-    height: 100%;
+    height: calc(100% - 50px);
 }
 
-/* 保存・編集ボタンの位置 */
-footer {
-    position: relative;
+/* フッターの設定 */
+.footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    height: 50px;
 }
 
-input[name=save] {
-    position: absolute;
-    right: 0;
+.footer ul {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-input[name=edit] {
-    position: absolute;
-    right: 0;
+.footer li {
+    line-height: 2.6;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    flex: 1;
+}
+
+.footer li a {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none; /* フッター項目の青線を非表示 */
+    font-size: 20px;
+}
+
+.era {
+	border-radius: 0.3rem;
+	background-color: #DCC2FF;
+	border-image-source: repeating-linear-gradient(45deg, #D0B0FF 0, #D0B0FF 6px, rgba(0, 0, 0, 0) 6px, rgba(0, 0, 0, 0) 8px);
+	border-image-slice: 4;
+	border-width: 4px;
+	border-style: solid;
+}
+
+.era:hover {
+	border: 4px solid #D0B0FF;
+}
+
+.add {
+	border-radius: 0.3rem;
+	background-color: #FFC7AF;
+	border-image-source: repeating-linear-gradient(45deg, #FFAD90 0, #FFAD90 6px, rgba(0, 0, 0, 0) 6px, rgba(0, 0, 0, 0) 8px);
+	border-image-slice: 4;
+	border-width: 4px;
+	border-style: solid;
+}
+
+.add:hover {
+	border: 4px solid #FFAD90;
+}
+
+.edi {
+	border-radius: 0.3rem;
+	background-color: #BAD3FF;
+	border-image-source: repeating-linear-gradient(45deg, #A4C6FF 0, #A4C6FF 6px, rgba(0, 0, 0, 0) 6px, rgba(0, 0, 0, 0) 8px);
+	border-image-slice: 4;
+	border-width: 4px;
+	border-style: solid;
+}
+
+.edi:hover {
+	border: 4px solid #A4C6FF;
+}
+
+.sav {
+	border-radius: 0.3rem;
+	background-color: #FFBEDA	;
+	border-image-source: repeating-linear-gradient(45deg, #FFABCE 0, #FFABCE 6px, rgba(0, 0, 0, 0) 6px, rgba(0, 0, 0, 0) 8px);
+	border-image-slice: 4;
+	border-width: 4px;
+	border-style: solid;
+}
+
+.sav:hover {
+	border: 4px solid #FFABCE;
 }
 
 /* スマホだけに適用するCSS */
-@media only screen and (max-width:390px) {
+@media only screen and (max-width:500px) {
     /* 全体の設定 */
     html, body {
         height: 100svh;
@@ -134,47 +237,116 @@ input[name=edit] {
     }
 
     /* ヘッダーのスタイル */
-    .logo {
-        font-size: 20px;
+    .nav a {
+        display: none;
     }
 
-    .nav a {
-        font-size: 15px;
+    .header {
+        display: flex; /* 子要素を横並びにするために追加 */
+        justify-content: space-between; /* 子要素を左右に分散配置するために追加 */
+        align-items: center;
+    }
+
+    .logo a {
+        padding: 10px;
+    }
+
+    .logo a:before, .logo a:after {
+        display: none;
+    }
+
+    .header2 {
+        display: block;
+        padding: 10px;
+    }
+
+    .menu-btn, .menu-btn span {
+        transition: all .4s;
+    }
+
+    .menu-btn {
+        cursor: pointer;
+        display: block;
+        height: 25px;
+        margin: 0px;
+        position: relative; /* 右端に固定 */
+        width: 40px; /* メニューボタンの横幅 */
+    }
+
+    .menu-btn span {
+        background-color:#71b971;
+        box-sizing: border-box;
+        left: 0;
+        height: 4px; /* メニューボタンの線の幅 */
+        position: absolute;
+        width: 100%;
+    }
+
+    .menu-btn span:nth-of-type(1) {
+        top: 0;
+    }
+
+    .menu-btn span:nth-of-type(2) {
+        top: 10px;
+    }
+
+    .menu-btn span:nth-of-type(3) {
+        top: 20px;
+    }
+
+    body.open {
+        overflow: hidden;
+    }
+
+    .drawer-nav {
+        background-color: #87cfebf3;
+        left: -200%; /* メニューが左から出てくる */
+        height: calc(100% - 50px);
+        overflow-y: scroll;
+        position: fixed;
+        top: 0;
+        transition: all .5s;
+        width: 200px;
+    }
+
+    .drawer-nav.open {
+        left: 0;
+        transform: translateZ(0);
+    }
+
+    .drawer-nav ul {
+        box-sizing: border-box;
+        list-style: none;
+        height: 100%;
+        overflow-y: scroll;
+        overscroll-behavior: none;
+    }
+
+    .drawer-nav ul li {
+        border-bottom: 1px solid #3978d6;
+        padding: 10px;
+    }
+
+    .drawer-nav ul li a {
+        box-sizing: border-box;
+        display: block;
+        font-size: 18px;
+        padding: 5px 10px;
+        text-decoration: none;
     }
 
     /* サイドの設定 */
     .side {
-        flex: 0 0 100px; /* サイドバーの幅を指定 */
-        height: 100svh;
+        display: none;
     }
 
-    table {
-        margin: 1px;
-        border-top: solid 2px #3978d6;
-        border-bottom: solid 2px #3978d6;
+    .sort {
+        background-color: #ffd000;
+        margin: 10px;
     }
-
-    #wordlist {
-        letter-spacing: 0px;
-        padding: 0px;
-        font-size: 15px;
-    }
-
-    #sort {
-        font-size: 20px;
-        padding: 10px;
-        margin: 1px;
-    }
-
-    #search {
-        font-size: 10px;
-        width: 90px;
-        margin: 0 0 5px;
-    }
-
-    li {
-        font-size: 10px;
-        padding: 5px;
+    
+    .sort:hover {
+        background-color:#ffe77c;
     }
 
     /* センターの設定 */
@@ -184,15 +356,6 @@ input[name=edit] {
     
     .wr {
         flex-direction: column;
+        width: 100vw;
     }
-
-    /* 保存・編集ボタンの位置 */
-    input[name=save] {
-        font-size: 10px;
-    }
-
-    input[name=edit] {
-        font-size: 10px;
-    }
-
 }

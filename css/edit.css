@@ -1,5 +1,6 @@
 #word, #ruby {
     resize: none;
+    padding: 10px;
 }
 
 #word {
@@ -13,21 +14,23 @@
 #text {
     resize: none;
     font-size: large;
+    padding: 10px;
     box-sizing: border-box; /*　親要素に横幅を合わせる */
-    background: #cfe2ff;
 }
 
-/* スマホだけに適用するCSS */
-@media only screen and (max-width:390px) {
+@media only screen and (max-width:500px) {
     #word {
-        font-size: 20px;
+        font-size: 35px;
+        padding: 10px 10px 0;
     }
     
     #ruby {
-        font-size: 15px;
+        font-size: 25px;
+        padding: 10px 10px 0;
     }
     
     #text {
-        font-size: small;
+        font-size: 20px;
+        width: 100vw;
     }
 }

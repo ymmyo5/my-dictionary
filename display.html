@@ -10,15 +10,31 @@
     </head>
     <body>
         <header class="header">
-            <h1 class="logo">My辞典</h1>
-            <p class="nav"><a href="index.html">新規追加</a></p>
+            <h1 class="logo"><a href="#">My辞典</a></h1>
+
+            <!--スマホ用ハンバーガーメニュー-->
+            <div class="header2">
+                <a class="menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+    
+                <div class="drawer-nav">
+                    <button class="sort">昇順↑</button>
+                    <ul class="output">
+                        <!-- 単語が表示される場所 -->
+                    </ul>
+                </div>
+            </div>
+
         </header>
         <div class="parent">
             <div class="side">
                 <table>
                     <tr>
                         <td><h2 id="wordlist">単語一覧</h2></td>
-                        <td><button id="sort">↑</button></td>
+                        <td><button class="sort">↑</button></td>
                     </tr>
                 </table>
 
@@ -27,7 +43,7 @@
                     <input type="search" id="search" name="searchbox" list="search" class="box" placeholder="単語を検索">
                 </form>
                 
-                <ul id="output">
+                <ul class="output">
                     <!-- 単語が表示される場所 -->
                 </ul>
             </div>
@@ -40,8 +56,12 @@
                 <p style="white-space:pre-wrap;" id="text"></p>
             </div>
         </div>
-        <footer>
-            <input type="submit" value="編集" name="edit" id="edit" onclick="edit()">
+        <footer class="footer">
+            <ul>
+                <li class="add"><a href="index.html">新規追加</a></li>
+                <li class="edi"><a onclick="edit()">内容編集</a></li>
+                <li class="era"><a onclick="erase()">削除</a></li>
+            </ul>
         </footer>
         <script type="text/javascript" src="js/common.js"></script>
     </body>

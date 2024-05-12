@@ -12,29 +12,29 @@
     margin: 0;
     padding: 10px;
     overflow-y: auto; /* サイドバーがコンテンツよりy軸に長い場合にスクロールバーを表示 */
-    border-top: solid 5px #3978d6;
-    background: #cfe2ff;
+    margin: 6px; /* デフォルトのマージンを削除 */
+    background: #cce6ff;
+    box-shadow: 0px 0px 0px 5px #cce6ff;
+    border: dashed 2px white;
+    padding: 0.2em 0.5em;
+    height: 100%;
+    overflow-y: auto;
 }
 
 /* スマホだけに適用するCSS */
-@media only screen and (max-width:390px) {
-    #word, #ruby {
-        margin: 0;
-        padding: 5px;
-    }
-
+@media only screen and (max-width:500px) {
     #word {
-        font-size: 20px;
+        font-size: 35px;
+        padding: 10px 10px 0;
     }
     
     #ruby {
-        font-size: 15px;
-        padding: 1px 7px 10px;
+        font-size: 25px;
+        padding: 0 10px 10px;
     }
     
     #text {
-        border-top: solid 2px #3978d6;
-        font-size: small;
-        margin: auto;
+        font-size: 20px;
+        width: 97vw;
     }
 }
