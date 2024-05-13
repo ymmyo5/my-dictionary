@@ -29,16 +29,36 @@ setHeight();
 window.addEventListener('resize', setHeight);
 
 
-// 保存ボタンのクリックイベントを追加
+// save関数の外に変数を定義
+var newRuby = "";
+
+$(function() {
+    // #wordフィールドのキーが離されたときに呼び出される関数
+    $(document).on('keyup', '#word', function(e) {
+        var inputValue = $(this).val();
+        
+        // ふりがなのバリデーション
+        var rubyPattern = /^[ぁ-んーa-zA-Z0-9!"#$%&'()*+,-./:;<=>?@[\\\]^_`{|}~]+$/;
+        if (rubyPattern.test(inputValue)) {
+            // バリデーションを通過した場合、newRubyに値を設定
+            newRuby = inputValue;
+            // #rubyフィールドにも同時に入力する
+            $('#ruby').val(inputValue);
+        } else {
+            // バリデーションを通過しない場合、空文字に設定
+            newRuby = "";
+        }
+    });
+});
+
+// save関数
 function save() {
     var newKey = document.getElementById("word").value;
-    var newRuby = document.getElementById("ruby").value;
     var newText = document.getElementById('text').value;
 
-    // ふりがなのバリデーション
-    var rubyPattern = /^[ぁ-んー0-9]+$/;
-    if (!rubyPattern.test(newRuby)) {
-        alert("ふりがなはひらがな・半角数字で入力してください");
+    // newRubyが空であればバリデーションエラーを表示
+    if (newRuby === "") {
+        alert("ふりがなは平仮名・半角英数字のいずれかで入力してください");
         return;
     }
 
@@ -118,9 +138,7 @@ function erase() {
             // キーに関連するローカルストレージの値を削除
             localStorage.removeItem(word);
             alert('辞典から削除されました');
-            reset();
-            // ページを再読み込み
-            location.reload();
+            window.location.href = "index.html";
         } else {
             alert('削除がキャンセルされました');
         }
@@ -226,12 +244,8 @@ function up(button) {
     });
 
     // ボタンを↓に書き換える
-    if (button.parentNode.classList.contains('drawer-nav')) {
-        // もし親要素のクラス名が 'drawer-nav' ならば
-        button.textContent = "降順↓";
-    } else {
-        button.textContent = "↓";
-    }
+    button.innerHTML = '<img src="矢印アイコン下.png" style="height:100%" alt="下矢印">';
+    
 }
 
 // リストを降順に並べ替えるdown関数
@@ -261,12 +275,7 @@ function down(button) {
     });
 
     // ボタンを↑に書き換える
-    if (button.parentNode.classList.contains('drawer-nav')) {
-        // もし親要素のクラス名が 'drawer-nav' ならば
-        button.textContent = "昇順↑";
-    } else {
-        button.textContent = "↑";
-    }
+    button.innerHTML = '<img src="矢印アイコン上.png" style="height:100%" alt="上矢印">';
 }
 
 // 検索機能
