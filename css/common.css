@@ -64,6 +64,7 @@ html, body {
     flex-direction: column;
     margin: 0 5px;
     height: 100%;
+    width: 20%;
 }
 
 .header2 {
@@ -87,8 +88,9 @@ table {
     background-color: #ffd000;
     border: #494949;
 	text-align: center;
-    margin: 0 15px 5px 0;
-	padding: 1px 8px;
+    height: 30px;
+    margin: 0 15px 0 0;
+	padding: 1px 5px;
 	border-radius: 0.3rem;
 	border-bottom: 7px solid #d6af00;
 }
@@ -134,10 +136,12 @@ table {
 }
 
 #word, #ruby {
+    font-family: "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", sans-serif;
     flex: 1; /* 残りの空間を全て使用するために追加 */
 }
 
 #text {
+    font-family: "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", sans-serif;
     box-sizing: border-box;
     width: 100%;
     height: calc(100% - 50px);
@@ -249,6 +253,7 @@ table {
 
     .logo a {
         padding: 10px;
+        pointer-events: none;
     }
 
     .logo a:before, .logo a:after {
@@ -296,6 +301,21 @@ table {
 
     body.open {
         overflow: hidden;
+    }
+
+    .drawer-overlay {
+        background: rgba(0, 0, 0, 0);
+        box-sizing: border-box;
+        display: none;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: calc(100% - 200px); /* メニューの幅を引いた余白部分の幅 */
+    }
+
+    .drawer-overlay.open {
+        display: block;
     }
 
     .drawer-nav {
