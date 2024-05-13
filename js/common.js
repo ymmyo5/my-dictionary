@@ -49,6 +49,12 @@ $(function() {
             newRuby = "";
         }
     });
+
+    // #rubyフィールドが変更されたときに呼び出される関数
+    $(document).on('change', '#ruby', function(e) {
+        // #rubyフィールドの値をnewRubyに反映
+        newRuby = $(this).val();
+    });
 });
 
 // save関数
