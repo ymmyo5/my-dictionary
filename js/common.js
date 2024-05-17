@@ -62,8 +62,12 @@ function save() {
     var newKey = document.getElementById("word").value;
     var newText = document.getElementById('text').value;
 
-    // newRubyが空であればバリデーションエラーを表示
-    if (newRuby === "") {
+    // newRubyが空であれば、ふりがなが自動入力されているかどうかを確認
+    if (newRuby === "" && $('#ruby').val() !== "") {
+        // 自動入力された場合はバリデーションをスキップする
+        newRuby = $('#ruby').val();
+    } else if (newRuby === "") {
+        // 自動入力されていない場合はバリデーションエラーを表示
         alert("ふりがなは平仮名・半角英数字のいずれかを用いて入力してください");
         return;
     }
