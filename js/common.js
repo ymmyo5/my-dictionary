@@ -1,4 +1,6 @@
 "use strict";
+
+// ドロワーメニュークリック時の関数
 $(function() {
 	$('.menu-btn').click(function() {
 		$('.drawer-nav').toggleClass('open');
@@ -18,20 +20,18 @@ $(function() {
 });
 
 
-// 1.関数の定義
+// ブラウザのサイズが変更された時・画面の向きを変えた時に再計算する関数
 function setHeight() {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
 }
-// 2.初期化
 setHeight();
-// 3.ブラウザのサイズが変更された時・画面の向きを変えた時に再計算する
 window.addEventListener('resize', setHeight);
 
 
 // save関数の外に変数を定義
 var newRuby = "";
-
+// ふりがなを自動入力する関数
 $(function() {
     // #wordフィールドのキーが離されたときに呼び出される関数
     $(document).on('keyup', '#word', function(e) {
@@ -57,7 +57,7 @@ $(function() {
     });
 });
 
-// save関数
+// フォームの内容を保存する関数
 function save() {
     var newKey = document.getElementById("word").value;
     var newText = document.getElementById('text').value;
@@ -68,6 +68,7 @@ function save() {
         return;
     }
 
+    // いずれかの要素が空であればバリデーションエラーを表示
     if (newKey === "" || newRuby === "" || newText === "") {
         alert("単語・ふりがな・説明をすべて入力してください");
     } else {
@@ -90,14 +91,14 @@ function save() {
     }
 }
 
-// リストに単語を追加する
+// リストに単語を追加する関数
 function addList() {
     var uls = document.querySelectorAll(".output"); // outputクラスを持つすべての要素を取得
     uls.forEach(function(ul) {
         ul.textContent = ""; // 各ul要素の中身をリセットする
 
         for(var i = 0; i < localStorage.length; i++) {
-            var list = document.createElement("li");
+            var list = document.createElement("li"); // リストを作成
             var key = localStorage.key(i);
             var wordData = JSON.parse(localStorage.getItem(key));
             list.textContent = wordData.word; // 単語のみ表示
@@ -113,14 +114,14 @@ function addList() {
     });
 }
 
+// 入力フォームをリセットする関数
 function reset() {
-    // 入力フォームの内容をリセット
     document.getElementById("word").value = "";
     document.getElementById("ruby").value = "";
     document.getElementById("text").value = "";
 }
 
-// リストを編集する
+// リストを編集する関数
 function edit() {
     var queryString = window.location.search; // クエリ文字列を取得
     var urlParams = new URLSearchParams(queryString); // URLSearchParamsに変換
@@ -128,7 +129,7 @@ function edit() {
     window.location.href = "edit.html?key=" + encodeURIComponent(word);
 }
 
-// リストから削除する
+// リストから削除する関数
 function erase() {
     var queryString = window.location.search;
     var urlParams = new URLSearchParams(queryString);
