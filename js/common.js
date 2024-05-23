@@ -29,10 +29,9 @@ setHeight();
 window.addEventListener('resize', setHeight);
 
 
-// save関数の外に変数を定義
-var newRuby = "";
 // ふりがなを自動入力する関数
 $(function() {
+    var autoRuby = "";
     // #wordフィールドのキーが離されたときに呼び出される関数
     $(document).on('keyup', '#word', function(e) {
         var inputValue = $(this).val();
@@ -41,19 +40,19 @@ $(function() {
         var rubyPattern = /^[ぁ-んーa-zA-Z0-9!"#$%&'()*+,-./:;<=>?@[\\\]^_`{|}~]+$/;
         if (rubyPattern.test(inputValue)) {
             // バリデーションを通過した場合、newRubyに値を設定
-            newRuby = inputValue;
+            autoRuby = inputValue;
             // #rubyフィールドにも同時に入力する
             $('#ruby').val(inputValue);
         } else {
             // バリデーションを通過しない場合、空文字に設定
-            newRuby = "";
+            autoRuby = "";
         }
     });
 
     // #rubyフィールドが変更されたときに呼び出される関数
     $(document).on('change', '#ruby', function(e) {
         // #rubyフィールドの値をnewRubyに反映
-        newRuby = $(this).val();
+        autoRuby = $(this).val();
     });
 });
 
@@ -61,37 +60,35 @@ $(function() {
 function save() {
     var newKey = document.getElementById("word").value;
     var newText = document.getElementById('text').value;
+    var newRuby = document.getElementById('ruby').value;
 
-    // newRubyが空であれば、ふりがなが自動入力されているかどうかを確認
-    if (newRuby === "" && $('#ruby').val() !== "") {
-        // 自動入力された場合はバリデーションをスキップする
-        newRuby = $('#ruby').val();
-    } else if (newRuby === "") {
+    if (newRuby === "") {
         // 自動入力されていない場合はバリデーションエラーを表示
         alert("ふりがなは平仮名・半角英数字のいずれかを用いて入力してください");
         return;
     }
 
-    // いずれかの要素が空であればバリデーションエラーを表示
-    if (newKey === "" || newRuby === "" || newText === "") {
-        alert("単語・ふりがな・説明をすべて入力してください");
-    } else {
-        // オブジェクトを作成し、必要なデータを格納
-        var wordData = {
-            word: newKey,
-            ruby: newRuby,
-            text: newText
-        };
+    // 入力値のバリデーション
+    if (newKey === "" || newText === "") {
+        alert("単語・説明をすべて入力してください");
+        return;
+    }
 
-        localStorage.setItem(newKey, JSON.stringify(wordData));
-        alert('正常に保存されました');
-        addList();
-        // ページを再読み込み
-        location.reload();
-        // URLがindex.htmlの場合はreset関数を実行
-        if (window.location.pathname.includes("index.html")) {
-            reset();
-        }
+    // オブジェクトを作成し、必要なデータを格納
+    var wordData = {
+        word: newKey,
+        ruby: newRuby,
+        text: newText
+    };
+
+    localStorage.setItem(newKey, JSON.stringify(wordData));
+    addList();
+    alert('正常に保存されました');
+    // ページを再読み込み
+    location.reload();
+    // URLがindex.htmlの場合はreset関数を実行
+    if (window.location.pathname.includes("index.html")) {
+        reset();
     }
 }
 
