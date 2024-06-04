@@ -11,7 +11,7 @@ html, body {
 /* ヘッダーのスタイル */
 .header {
     height: 50px;
-    background-color: #6fdb6f;
+    background-color: #8bc7ff;
     position: fixed;
     margin: 0;
     top: 0;
@@ -39,7 +39,7 @@ html, body {
     top: 50%;
     width: 45px;
     height: 1px;
-    background-color: #588f58;
+    background-color: #245f96;
 }
 
 .logo a:before {
@@ -208,15 +208,15 @@ table {
 
 .edi {
 	border-radius: 0.3rem;
-	background-color: #BAD3FF;
-	border-image-source: repeating-linear-gradient(45deg, #A4C6FF 0, #A4C6FF 6px, rgba(0, 0, 0, 0) 6px, rgba(0, 0, 0, 0) 8px);
+	background-color: #CBE8A5;
+	border-image-source: repeating-linear-gradient(45deg, #AECC87 0, #AECC87 6px, rgba(0, 0, 0, 0) 6px, rgba(0, 0, 0, 0) 8px);
 	border-image-slice: 4;
 	border-width: 4px;
 	border-style: solid;
 }
 
 .edi:hover {
-	border: 4px solid #A4C6FF;
+	border: 4px solid #AECC87;
 }
 
 .sav {
@@ -279,7 +279,7 @@ table {
     }
 
     .menu-btn span {
-        background-color:#588f58;
+        background-color:#245f96;
         box-sizing: border-box;
         left: 0;
         height: 4px; /* メニューボタンの線の幅 */
