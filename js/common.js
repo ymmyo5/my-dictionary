@@ -62,8 +62,10 @@ function save() {
     var newText = document.getElementById('text').value;
     var newRuby = document.getElementById('ruby').value;
 
-    if (newRuby === "") {
-        // 自動入力されていない場合はバリデーションエラーを表示
+    // ふりがなのバリデーション
+    var rubyPattern = /^[ぁ-んーa-zA-Z0-9!"#$%&'()*+,-./:;<=>?@[\\\]^_`{|}~\s]+$/;
+    if (!rubyPattern.test(newRuby)) {
+        // バリデーションエラーを表示して保存を中止
         alert("ふりがなは平仮名・半角英数字のいずれかを用いて入力してください");
         return;
     }
