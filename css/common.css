@@ -6,6 +6,7 @@ html, body {
     height: 100svh;
     color: #494949; /* 文字色 */
     scroll-behavior: smooth;
+    overflow: hidden;
 }
 
 /* ヘッダーのスタイル */
@@ -63,7 +64,7 @@ html, body {
     display: flex;
     flex-direction: column;
     margin: 0 5px;
-    height: 100%;
+    height: calc(100% - 105px);
     width: 180px;
 }
 
@@ -128,7 +129,8 @@ table {
     flex: 1; /* 残りの空間を全て使用するために追加 */
     display: flex;
     flex-direction: column;
-    height: 100svh;
+    height: calc(100% - 105px);
+    margin-right: 15px;
 }
 
 .wr {
@@ -370,7 +372,7 @@ table {
 
     /* センターの設定 */
     .center {
-        height: 100svh;
+        height: calc(100% - 105px);
     }
     
     .wr {
