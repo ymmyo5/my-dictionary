@@ -322,7 +322,6 @@ table {
         background-color: #87cfebf3;
         left: -200%; /* メニューが左から出てくる */
         height: calc(100% - 50px);
-        overflow-y: scroll;
         position: fixed;
         top: 0;
         transition: all .5s;
