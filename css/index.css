@@ -1,6 +1,7 @@
 #word, #ruby {
+    width: 50%;
     padding: 10px;
-    font-size: 20px;
+    font-size: 30px;
 }
 
 #text {
@@ -13,11 +14,13 @@
 /* スマホだけに適用するCSS */
 @media only screen and (max-width:500px) {
     #word {
+        width: auto;
         font-size: 30px;
         padding: 10px;
     }
     
     #ruby {
+        width: auto;
         font-size: 25px;
         padding: 10px;
     }

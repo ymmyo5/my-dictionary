@@ -130,7 +130,6 @@ table {
     display: flex;
     flex-direction: column;
     height: calc(100% - 105px);
-    margin-right: 15px;
 }
 
 .wr {
@@ -140,6 +139,7 @@ table {
 #word, #ruby {
     font-family: "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", sans-serif;
     flex: 1; /* 残りの空間を全て使用するために追加 */
+    height: 65px;
 }
 
 #text {
