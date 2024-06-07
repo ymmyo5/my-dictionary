@@ -5,7 +5,6 @@ html, body {
     padding: 0; /* テキストとの間隔を削除 */
     height: 100svh;
     color: #494949; /* 文字色 */
-    scroll-behavior: smooth;
     overflow: hidden;
 }
 
