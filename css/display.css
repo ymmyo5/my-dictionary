@@ -1,24 +1,30 @@
 #word, #ruby {
+    box-sizing: border-box;
     margin: 0;
-    padding: 10px;
+    height: 87px;
+    padding: 20px 20px 0 20px;
+    overflow-y: auto;
 }
 
 #ruby {
     font-size: 20px;
-    padding: 20px;
+    padding-top: 30px;
+    margin-right: 4px;
 }
 
 #text {
-    margin: 0;
+    margin: 0; /* デフォルトのマージンを削除 */
     padding: 10px;
     overflow-y: auto; /* サイドバーがコンテンツよりy軸に長い場合にスクロールバーを表示 */
-    margin: 6px; /* デフォルトのマージンを削除 */
+    margin: 6px;
     background: #cce6ff;
     box-shadow: 0px 0px 0px 5px #cce6ff;
     border: dashed 2px white;
     padding: 0.2em 0.5em;
     height: 100%;
+    width: calc(100% - 15px);
     overflow-y: auto;
+    font-size: larger;
 }
 
 /* スマホだけに適用するCSS */
@@ -30,7 +36,7 @@
     
     #ruby {
         font-size: 25px;
-        padding: 0 10px 10px;
+        padding: 0 10px 0;
     }
     
     #text {

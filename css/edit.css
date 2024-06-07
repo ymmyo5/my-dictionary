@@ -20,12 +20,12 @@
 
 @media only screen and (max-width:500px) {
     #word {
-        font-size: 35px;
+        font-size: 25px;
         padding: 10px 10px 0;
     }
     
     #ruby {
-        font-size: 25px;
+        font-size: 20px;
         padding: 10px 10px 0;
     }
     
