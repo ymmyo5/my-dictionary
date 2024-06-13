@@ -1,14 +1,17 @@
+.wr {
+    height: 87px; /* 高さを固定 */
+}
+
 #word, #ruby {
-    box-sizing: border-box;
+    font-family: "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", sans-serif;
     margin: 0;
-    height: 87px;
-    padding: 20px 20px 0 20px;
-    overflow-y: auto;
+    padding: 20px 10px 0; /* 上下左右に余白を設定 */
+    overflow-y: auto; /* コンテンツがはみ出した場合にスクロールバーを表示 */
 }
 
 #ruby {
     font-size: 20px;
-    padding-top: 30px;
+    padding: 30px 10px 0 10px;
     margin-right: 4px;
 }
 
@@ -29,18 +32,27 @@
 
 /* スマホだけに適用するCSS */
 @media only screen and (max-width:500px) {
+    .wr {
+        height: 150px;
+    }
+    
+    #word, #ruby {
+        width: auto;
+    }
+    
     #word {
-        font-size: 35px;
-        padding: 10px 10px 0;
+        font-size: 30px;
+        padding: 15px 10px 0;
     }
     
     #ruby {
         font-size: 25px;
-        padding: 0 10px 0;
+        margin: 0;
+        padding: 5px 10px 0;
     }
     
     #text {
         font-size: 20px;
-        width: 97vw;
+        width: 100vw;
     }
 }

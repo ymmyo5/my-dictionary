@@ -139,6 +139,7 @@ table {
     font-family: "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", sans-serif;
     flex: 1; /* 残りの空間を全て使用するために追加 */
     height: 65px;
+    width: 100%;
 }
 
 #text {
@@ -222,15 +223,15 @@ table {
 
 .sav {
 	border-radius: 0.3rem;
-	background-color: #FFBEDA	;
-	border-image-source: repeating-linear-gradient(45deg, #FFABCE 0, #FFABCE 6px, rgba(0, 0, 0, 0) 6px, rgba(0, 0, 0, 0) 8px);
+	background-color: #FFBECE	;
+	border-image-source: repeating-linear-gradient(45deg, #FF91AC 0, #FF91AC 6px, rgba(0, 0, 0, 0) 6px, rgba(0, 0, 0, 0) 8px);
 	border-image-slice: 4;
 	border-width: 4px;
 	border-style: solid;
 }
 
 .sav:hover {
-	border: 4px solid #FFABCE;
+	border: 4px solid #FF91AC;
 }
 
 /* スマホだけに適用するCSS */
@@ -320,7 +321,7 @@ table {
     }
 
     .drawer-nav {
-        background-color: #87cfebf3;
+        background-color: #7db4e6;
         left: -200%; /* メニューが左から出てくる */
         height: calc(100% - 50px);
         position: fixed;
