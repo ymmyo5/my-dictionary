@@ -33,7 +33,7 @@
 /* スマホだけに適用するCSS */
 @media only screen and (max-width:500px) {
     .wr {
-        height: 150px;
+        height: 130px;
     }
     
     #word, #ruby {
@@ -42,7 +42,7 @@
     
     #word {
         font-size: 30px;
-        padding: 15px 10px 0;
+        padding: 8px 10px 0;
     }
     
     #ruby {
@@ -53,6 +53,6 @@
     
     #text {
         font-size: 20px;
-        width: 100vw;
+        width: 97vw;
     }
 }
