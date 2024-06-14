@@ -32,23 +32,22 @@
 
 /* スマホだけに適用するCSS */
 @media only screen and (max-width:500px) {
-    .wr {
-        height: 130px;
-    }
-    
     #word, #ruby {
+        display: flex;
         width: auto;
+        padding: 0 10px;
     }
     
     #word {
+        flex: 1.5;
         font-size: 30px;
-        padding: 8px 10px 0;
+        padding-top: 3px;
     }
     
     #ruby {
-        font-size: 25px;
+        font-size: 20px;
         margin: 0;
-        padding: 5px 10px 0;
+        padding-bottom: 3px;
     }
     
     #text {
